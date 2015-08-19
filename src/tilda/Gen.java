@@ -32,7 +32,7 @@ public class Gen
   {
     static final Logger LOG = LogManager.getLogger(Gen.class.getName());
 
-    public static void main(String[] Args)
+    public static void main(String[] Args) 
       {
         SystemValues.autoInit();
 

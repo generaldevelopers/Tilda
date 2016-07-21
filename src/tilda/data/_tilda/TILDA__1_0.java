@@ -1,4 +1,4 @@
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.util.*;
 
@@ -11,15 +11,12 @@ import tilda.performance.*;
 import tilda.utils.*;
 
 
-@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
 public final class TILDA__1_0
  {
    protected static final Logger LOG = LogManager.getLogger(TILDA__1_0.class.getName());
 
    protected static final String _COMMAQUESTION            =TextUtil.Identity(",?");
    protected static final String _EQUALQUESTION            =TextUtil.Identity("=?");
-   protected static final String _COMMACURRENTTIMESTAMP    =TextUtil.Identity(", statement_timestamp()");
-   protected static final String _EQUALCURRENTTIMESTAMP    =TextUtil.Identity("= statement_timestamp()");
 
    protected static boolean HandleCatch(Connection C, java.sql.SQLException E, String OperationDebugStr) throws java.sql.SQLException
      {
@@ -53,11 +50,11 @@ public final class TILDA__1_0
 
    public static void initSchema(Connection C) throws Exception
     {
-      tilda.data._tilda.TILDA__ZONEINFO_Factory.initObject(C);
-      tilda.data._tilda.TILDA__KEY_Factory.initObject(C);
-      tilda.data._tilda.TILDA__OBJECTPERF_Factory.initObject(C);
-      tilda.data._tilda.TILDA__TRANSPERF_Factory.initObject(C);
-      tilda.data._tilda.TILDA__TESTING_Factory.initObject(C);
+      tilda.data._Tilda.TILDA__ZONEINFO_Factory.initObject(C);
+      tilda.data._Tilda.TILDA__KEY_Factory.initObject(C);
+      tilda.data._Tilda.TILDA__OBJECTPERF_Factory.initObject(C);
+      tilda.data._Tilda.TILDA__TRANSPERF_Factory.initObject(C);
+      tilda.data._Tilda.TILDA__TESTING_Factory.initObject(C);
     }
 
  }

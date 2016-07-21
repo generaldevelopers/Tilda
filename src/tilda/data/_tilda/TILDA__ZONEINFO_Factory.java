@@ -1,5 +1,5 @@
 
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -27,7 +27,6 @@ import tilda.db.QueryDetails;
 import tilda.db.SelectQuery;
 import tilda.db.UpdateQuery;
 import tilda.db.DeleteQuery;
-import tilda.db.processors.RecordProcessor;
 import tilda.enums.ColumnType;
 import tilda.enums.StatementType;
 import tilda.enums.TransactionType;
@@ -47,24 +46,28 @@ import tilda.utils.TextUtil;
 // THIS CODE IS GENERATED AND **MUST NOT** BE MODIFIED
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@SuppressWarnings({ "unchecked", "unused" })
+@SuppressWarnings({ "unused" })
 public class TILDA__ZONEINFO_Factory
  {
    protected static final Logger LOG = LogManager.getLogger(TILDA__ZONEINFO_Factory.class.getName());
 
    protected TILDA__ZONEINFO_Factory() { }
 
-   public static final String TABLENAME = TextUtil.Print("TILDA.ZONEINFO", "");
+   public static final Class<TILDA__ZONEINFO> DATA_CLASS= TILDA__ZONEINFO.class;
+   public static final String SCHEMA_LABEL = TextUtil.Print("TILDA", "");
+   public static final String TABLENAME_LABEL = TextUtil.Print("ZONEINFO", "");
+   public static final String SCHEMA_TABLENAME_LABEL = TextUtil.Print("TILDA.ZONEINFO", "");
+   public static void getFullTableNameVar(Connection C, StringBuilder S) { C.getFullTableVar(S, "TILDA", "ZONEINFO"); }
 
    protected static abstract class COLS {
-     public static Type_StringPrimitive         ID           = new Type_StringPrimitive        ("TILDA.ZONEINFO", "id"           , 0);
-     public static Type_StringPrimitive         VALUE        = new Type_StringPrimitive        ("TILDA.ZONEINFO", "value"        , 1);
-     public static Type_StringPrimitive         LABEL        = new Type_StringPrimitive        ("TILDA.ZONEINFO", "label"        , 2);
-     public static Type_StringPrimitiveNull     DEACTIVATEDTZ= new Type_StringPrimitiveNull    ("TILDA.ZONEINFO", "deactivatedTZ", 3);
-     public static Type_DatetimePrimitiveNull   DEACTIVATED  = new Type_DatetimePrimitiveNull  ("TILDA.ZONEINFO", "deactivated"  , 4);
-     public static Type_DatetimePrimitive       CREATED      = new Type_DatetimePrimitive      ("TILDA.ZONEINFO", "created"      , 5);
-     public static Type_DatetimePrimitive       LASTUPDATED  = new Type_DatetimePrimitive      ("TILDA.ZONEINFO", "lastUpdated"  , 6);
-     public static Type_DatetimePrimitiveNull   DELETED      = new Type_DatetimePrimitiveNull  ("TILDA.ZONEINFO", "deleted"      , 7);
+     public static Type_StringPrimitive         ID           = new Type_StringPrimitive        (SCHEMA_LABEL, TABLENAME_LABEL, "id"           , 0, "The id for this enumeration.");
+     public static Type_StringPrimitive         VALUE        = new Type_StringPrimitive        (SCHEMA_LABEL, TABLENAME_LABEL, "value"        , 1, "The value for this enumeration.");
+     public static Type_StringPrimitive         LABEL        = new Type_StringPrimitive        (SCHEMA_LABEL, TABLENAME_LABEL, "label"        , 2, "The label for this enumeration.");
+     public static Type_StringPrimitiveNull     DEACTIVATEDTZ= new Type_StringPrimitiveNull    (SCHEMA_LABEL, TABLENAME_LABEL, "deactivatedTZ", 3, "Generated helper column to hold the time zone ID for 'deactivated'.");
+     public static Type_DatetimePrimitiveNull   DEACTIVATED  = new Type_DatetimePrimitiveNull  (SCHEMA_LABEL, TABLENAME_LABEL, "deactivated"  , 4, "The label for this enumeration.");
+     public static Type_DatetimePrimitive       CREATED      = new Type_DatetimePrimitive      (SCHEMA_LABEL, TABLENAME_LABEL, "created"      , 5, "The timestamp for when the record was created.");
+     public static Type_DatetimePrimitive       LASTUPDATED  = new Type_DatetimePrimitive      (SCHEMA_LABEL, TABLENAME_LABEL, "lastUpdated"  , 6, "The timestamp for when the record was last updated.");
+     public static Type_DatetimePrimitiveNull   DELETED      = new Type_DatetimePrimitiveNull  (SCHEMA_LABEL, TABLENAME_LABEL, "deleted"      , 7, "The timestamp for when the record was deleted.");
 ;
    }
 
@@ -82,40 +85,60 @@ public class TILDA__ZONEINFO_Factory
             }
          }
      }
-   private static class RecordProcessorList implements RecordProcessor
+   private static class RecordProcessorInternal implements tilda.db.processors.RecordProcessor
      {
-       public RecordProcessorList(Connection C, int Start)
+       public RecordProcessorInternal(Connection C, int Start)
          {
-           _L = new ArrayListResults<tilda.data.ZoneInfo_Data>(Start);
            _C = C;
+           _L = new ArrayListResults<tilda.data.ZoneInfo_Data>(Start);
          }
-       protected ArrayListResults<tilda.data.ZoneInfo_Data> _L = null;
+       public RecordProcessorInternal(Connection C, tilda.db.processors.ObjectProcessor<tilda.data.ZoneInfo_Data> OP)
+         {
+           _C = C;
+           _OP = OP;
+         }
        protected Connection _C = null;
+       protected tilda.db.processors.ObjectProcessor<tilda.data.ZoneInfo_Data> _OP;
+       protected ArrayListResults<tilda.data.ZoneInfo_Data> _L = null;
        public void    Start  () { }
-       public void    End    (boolean HasMore, int Max) { _L.wrapup(HasMore, Max); }
+       public void    End    (boolean HasMore, int Max) { if (_OP == null) _L.wrapup(HasMore, Max); }
        public boolean Process(int Index, java.sql.ResultSet RS) throws Exception
         {
           tilda.data.ZoneInfo_Data Obj = new tilda.data.ZoneInfo_Data();
-          boolean OK = ((tilda.data._tilda.TILDA__ZONEINFO)Obj).Init(_C, RS);
+          boolean OK = ((tilda.data._Tilda.TILDA__ZONEINFO)Obj).Init(_C, RS);
           if (OK == true)
-           _L.add(Obj);
+           {
+             if (_OP == null)
+              _L.add(Obj);
+             else
+              _OP.Process(Index, Obj);
+           }
           return OK;
         }
      }
 
-   private static final ListResults<tilda.data.ZoneInfo_Data> ReadMany(Connection C, int LookupId, tilda.data._tilda.TILDA__ZONEINFO Obj, Object ExtraParams, int Start, int Size) throws Exception
+   private static final void ReadMany(Connection C, int LookupId, tilda.db.processors.RecordProcessor RP, tilda.data._Tilda.TILDA__ZONEINFO Obj, Object ExtraParams, int Start, int Size) throws Exception
      {
        long T0 = System.nanoTime();
        StringBuilder S = new StringBuilder(1024);
-       S.append("select TILDA.ZONEINFO.\"id\", TILDA.ZONEINFO.\"value\", TILDA.ZONEINFO.\"label\", TILDA.ZONEINFO.\"deactivatedTZ\", TILDA.ZONEINFO.\"deactivated\", TILDA.ZONEINFO.\"created\", TILDA.ZONEINFO.\"lastUpdated\", TILDA.ZONEINFO.\"deleted\" from TILDA.ZONEINFO");
+       S.append("select ");
+       S.append(" "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "value");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "label");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "deactivatedTZ");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "deactivated");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "created");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "lastUpdated");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "deleted");
+       S.append(" from "); C.getFullTableVar(S, "TILDA", "ZONEINFO");
        switch (LookupId)
         {
           case -7:
              String clause = ((SelectQuery)ExtraParams).getWhereClause();
-             if (TextUtil.isNullOrEmpty(clause) == false) S.append(" where ").append(clause);
+             if (TextUtil.isNullOrEmpty(clause) == false) S.append(clause);
              break;
           case 3:
-             S.append(" order by TILDA.ZONEINFO.\"id\" ASC");
+             S.append(" order by "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id"); S.append(" ASC");
              break;
           case -666: break;
           default: throw new Exception("Invalid LookupId "+LookupId+" found. Cannot create where clause.");
@@ -125,13 +148,12 @@ public class TILDA__ZONEINFO_Factory
        String Q = S.toString() + C.getSelectLimitClause(Start, Size+1);
        S.setLength(0);
        S = null;
-       QueryDetails.setLastQuery(TABLENAME, Q);
-       LOG.debug("TILDA([7mTILDA.ZONEINFO[27m): "+Q.replaceAll(TABLENAME+"\\.",""));
+       QueryDetails.setLastQuery(SCHEMA_TABLENAME_LABEL, Q);
+       LOG.debug("TILDA([7mTILDA.ZONEINFO[27m): "+Q);
        java.sql.PreparedStatement PS=null;
        java.sql.ResultSet RS=null;
        List<java.sql.Array> AllocatedArrays = new ArrayList<java.sql.Array>();
        int count = 0;
-       RecordProcessorList RPL = new RecordProcessorList(C, Start);
        try
         {
           PS = C.prepareStatement(Q);
@@ -147,20 +169,19 @@ public class TILDA__ZONEINFO_Factory
              default: throw new Exception("Invalid LookupId "+LookupId+" found. Cannot prepare statement.");
            }
 
-          count = JDBCHelper.Process(PS.executeQuery(), RPL, Start, true, Size, true);
+          count = JDBCHelper.Process(PS.executeQuery(), RP, Start, true, Size, true);
         }
        catch (java.sql.SQLException E)
         {
-          tilda.data._tilda.TILDA__1_0.HandleCatch(C, E, "selected");
+          tilda.data._Tilda.TILDA__1_0.HandleCatch(C, E, "selected");
         }
        finally
         {
-          tilda.data._tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__ZONEINFO_Factory.TABLENAME, StatementType.SELECT, count, AllocatedArrays);
+          tilda.data._Tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, StatementType.SELECT, count, AllocatedArrays);
           PS = null;
           AllocatedArrays = null;
         }
 
-      return RPL._L;
     }
 
 
@@ -177,7 +198,7 @@ public class TILDA__ZONEINFO_Factory
 */
    static public tilda.data.ZoneInfo_Data Create(String id, String value, String label) throws Exception
      {
-       tilda.data._tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
+       tilda.data._Tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
        Obj.initForCreate();
 
 
@@ -198,9 +219,9 @@ public class TILDA__ZONEINFO_Factory
      {
        int IncomingErrors = Errors.size();
 
-       String               _id            =                       ParseUtil.parseString       ("id"           , true , Values.get("id"           ), Errors );
-       String               _value         =                       ParseUtil.parseString       ("value"        , true , Values.get("value"        ), Errors );
-       String               _label         =                       ParseUtil.parseString       ("label"        , true , Values.get("label"        ), Errors );
+       String        _id            =                       ParseUtil.parseString("id"           , true , Values.get("id"           ), Errors );
+       String        _value         =                       ParseUtil.parseString("value"        , true , Values.get("value"        ), Errors );
+       String        _label         =                       ParseUtil.parseString("label"        , true , Values.get("label"        ), Errors );
 
        if (IncomingErrors != Errors.size())
         return null;
@@ -213,7 +234,7 @@ public class TILDA__ZONEINFO_Factory
 
    static public tilda.data.ZoneInfo_Data LookupByPrimaryKey(String id) throws Exception
      {
-       tilda.data._tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
+       tilda.data._Tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
        Obj.initForLookup(0);
 
        Obj.setId           (id           ); Obj.__Saved_id            = Obj._id           ;
@@ -223,7 +244,7 @@ public class TILDA__ZONEINFO_Factory
 
    static public tilda.data.ZoneInfo_Data LookupById(String id) throws Exception
      {
-       tilda.data._tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
+       tilda.data._Tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
        Obj.initForLookup(1);
 
        Obj.setId           (id           ); Obj.__Saved_id            = Obj._id           ;
@@ -233,7 +254,7 @@ public class TILDA__ZONEINFO_Factory
 
    static public tilda.data.ZoneInfo_Data LookupByValue(String value) throws Exception
      {
-       tilda.data._tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
+       tilda.data._Tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
        Obj.initForLookup(2);
 
        Obj.setValue        (value        ); 
@@ -243,24 +264,44 @@ public class TILDA__ZONEINFO_Factory
 
    static public ListResults<tilda.data.ZoneInfo_Data> LookupWhereAll(Connection C, int Start, int Size) throws Exception
      {
-       tilda.data._tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
+       tilda.data._Tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
        Obj.initForLookup(tilda.utils.SystemValues.EVIL_VALUE);
 
 
 
-       return ReadMany(C, 3, Obj, null, Start, Size);
+       RecordProcessorInternal RPI = new RecordProcessorInternal(C, Start);
+       ReadMany(C, 3, RPI, Obj, null, Start, Size);
+       return RPI._L;
+     }
+
+   static public void LookupWhereAll(Connection C, tilda.db.processors.ObjectProcessor<tilda.data.ZoneInfo_Data> OP, int Start, int Size) throws Exception
+     {
+       tilda.data._Tilda.TILDA__ZONEINFO Obj = new tilda.data.ZoneInfo_Data();
+       Obj.initForLookup(tilda.utils.SystemValues.EVIL_VALUE);
+
+
+
+       RecordProcessorInternal RPI = new RecordProcessorInternal(C, OP);
+       ReadMany(C, 3, RPI, Obj, null, Start, Size);
      }
 
 
 
-   public static SelectQuery newSelectQuery(Connection C) throws Exception { return new SelectQuery(C   , TILDA__ZONEINFO_Factory.TABLENAME); }
-   public static SelectQuery newWhereQuery (            ) throws Exception { return new SelectQuery(null, TILDA__ZONEINFO_Factory.TABLENAME); }
+   public static SelectQuery newSelectQuery(Connection C) throws Exception { return new SelectQuery(C, SCHEMA_LABEL, TABLENAME_LABEL, true); }
+   public static SelectQuery newWhereQuery (Connection C) throws Exception { return new SelectQuery(C, SCHEMA_LABEL, TABLENAME_LABEL, false); }
    public static ListResults<tilda.data.ZoneInfo_Data> runSelect(Connection C, SelectQuery Q, int Start, int Size) throws Exception
      {
-       return ReadMany(C, -7, null, Q, Start, Size);
+       RecordProcessorInternal RPI = new RecordProcessorInternal(C, Start);
+       ReadMany(C, -7, RPI, null, Q, Start, Size);
+       return RPI._L;
      }
-   public static UpdateQuery newUpdateQuery(Connection C) throws Exception { return new UpdateQuery(C, TILDA__ZONEINFO_Factory.TABLENAME); }
-   public static DeleteQuery newDeleteQuery(Connection C) throws Exception { return new DeleteQuery(C, TILDA__ZONEINFO_Factory.TABLENAME); }
+   public static void runSelect(Connection C, SelectQuery Q, tilda.db.processors.ObjectProcessor<tilda.data.ZoneInfo_Data> OP, int Start, int Size) throws Exception
+     {
+       RecordProcessorInternal RPI = new RecordProcessorInternal(C, OP);
+       ReadMany(C, -7, RPI, null, Q, Start, Size);
+     }
+   public static UpdateQuery newUpdateQuery(Connection C) throws Exception { return new UpdateQuery(C, SCHEMA_LABEL, TABLENAME_LABEL); }
+   public static DeleteQuery newDeleteQuery(Connection C) throws Exception { return new DeleteQuery(C, SCHEMA_LABEL, TABLENAME_LABEL); }
 
    protected static Map<String, tilda.data.ZoneInfo_Data> __ENUMERATIONS_BY_ID    = new HashMap<String, tilda.data.ZoneInfo_Data>();
    protected static Map<String, tilda.data.ZoneInfo_Data> __ENUMERATIONS_BY_VALUE = new HashMap<String, tilda.data.ZoneInfo_Data>();

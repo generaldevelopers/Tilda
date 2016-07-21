@@ -32,15 +32,15 @@ import tilda.enums.StatementType;
  */
 public class InsertQuery extends QueryHelper
   {
-    public InsertQuery(Connection C, String TableName)
+    public InsertQuery(Connection C, String SchemaName, String TableName)
       throws Exception
       {
-        super(C, StatementType.INSERT, TableName);
+        super(C, StatementType.INSERT, SchemaName, TableName, true);
       }
 
     public int execute()
       throws Exception
       {
-        return _C.ExecuteUpdate(_TableName, _QueryStr.toString());
+        return _C.ExecuteUpdate(_SchemaName, _TableName, _QueryStr.toString());
       }
   }

@@ -4,7 +4,7 @@
  Code is generated: do not modify! Instead, create a derived class and override desired functionality
 */
 
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -49,8 +49,11 @@ import tilda.utils.TextUtil;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
-This is the Java 8/PostgreSQL Tilda data class <B>Data_ZONEINFO</B> mapped to the table <B>TILDA.ZONEINFO</B>.
+<DIV id='ZONEINFO_DIV'>
+<H1>ZONEINFO</H1>
+The generated Java 8/PostgreSQL Tilda data class <B>Data_ZONEINFO</B> is mapped to the table <B>TILDA.ZONEINFO</B>.
 <UL>
+
 <LI>The Object has normal <B>read/write</B> capabilities.</LI>
 <LI>The Object is OCC-enabled. Default created/lastUpdated/deleted columns will be automatically generated.</LI>
 </UL>
@@ -58,35 +61,40 @@ This is the Java 8/PostgreSQL Tilda data class <B>Data_ZONEINFO</B> mapped to th
 <BR>
 It contains the following columns:<BR>
  <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Type&nbsp;&nbsp;</TH><TH>Column&nbsp;&nbsp;</TH><TH>Type&nbsp;&nbsp;</TH><TH>Nullable&nbsp;&nbsp;</TH><TH>Mode&nbsp;&nbsp;</TH><TH>Invariant&nbsp;&nbsp;</TH><TH>Protect&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>id</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.id</B>&nbsp;&nbsp;</TD><TD>character(5)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The id for this enumeration.</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>1&nbsp;&nbsp;</TD><TD align="right"><B>value</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.value</B>&nbsp;&nbsp;</TD><TD>varchar(50)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The value for this enumeration.</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>2&nbsp;&nbsp;</TD><TD align="right"><B>label</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.label</B>&nbsp;&nbsp;</TD><TD>varchar(254)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>ABSOLUTE&nbsp;&nbsp;</TD><TD>The label for this enumeration.</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>3&nbsp;&nbsp;</TD><TD align="right"><B>deactivatedTZ</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.deactivatedTZ</B>&nbsp;&nbsp;</TD><TD>character(5)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>Generated helper column to hold the time zone ID for 'deactivated'.</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>4&nbsp;&nbsp;</TD><TD align="right"><B>deactivated</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.deactivated</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The label for this enumeration.</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>5&nbsp;&nbsp;</TD><TD align="right"><B>created</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.created</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was created.</TD></TR>
-  <TR bgcolor="#EEEEEE"><TD></TD><TD></TD><TD colspan="10" align="center">
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
-</TABLE>
-</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>6&nbsp;&nbsp;</TD><TD align="right"><B>lastUpdated</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.lastUpdated</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was last updated.</TD></TR>
+   <TR><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH align="left">Type</TH><TH align="left">Column</TH><TH align="left">Type</TH><TH align="left">Nullable</TH><TH align="left">Mode</TH><TH align="left">Invariant</TH><TH align="left">Protect</TH><TH align="left">Description</TH></TR>
+
+  <TR valign="top" bgcolor="#EEEEEE"><TD>1&nbsp;&nbsp;</TD><TD align="right"><B>id</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.id</B>&nbsp;&nbsp;</TD><TD>character(5)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The id for this enumeration.</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>2&nbsp;&nbsp;</TD><TD align="right"><B>value</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.value</B>&nbsp;&nbsp;</TD><TD>varchar(50)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The value for this enumeration.</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>3&nbsp;&nbsp;</TD><TD align="right"><B>label</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.label</B>&nbsp;&nbsp;</TD><TD>varchar(254)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>ABSOLUTE&nbsp;&nbsp;</TD><TD>The label for this enumeration.</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>4&nbsp;&nbsp;</TD><TD align="right"><B>deactivatedTZ</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.deactivatedTZ</B>&nbsp;&nbsp;</TD><TD>character(5)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>Generated helper column to hold the time zone ID for 'deactivated'.</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>5&nbsp;&nbsp;</TD><TD align="right"><B>deactivated</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.deactivated</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The label for this enumeration.</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>6&nbsp;&nbsp;</TD><TD align="right"><B>created</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.created</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was created.</TD></TR>
   <TR bgcolor="#FFFFFF"><TD></TD><TD></TD><TD colspan="10" align="center">
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>7&nbsp;&nbsp;</TD><TD align="right"><B>deleted</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.deleted</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was deleted.</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>7&nbsp;&nbsp;</TD><TD align="right"><B>lastUpdated</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.lastUpdated</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was last updated.</TD></TR>
+  <TR bgcolor="#EEEEEE"><TD></TD><TD></TD><TD colspan="10" align="center">
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
+</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>8&nbsp;&nbsp;</TD><TD align="right"><B>deleted</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.ZONEINFO.deleted</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was deleted.</TD></TR>
+</TABLE>
+</DIV>
 
  @author   Tilda code gen for Java 8/PostgreSQL
  @version  Tilda 1.0
- @generated Dec 5 2015, 11:56:26IST
+ @generated Jul 5 2016, 03:06:35EDT
 */
-@SuppressWarnings({ "unchecked", "unused" })
+@SuppressWarnings({ "unused" })
 public abstract class TILDA__ZONEINFO implements tilda.interfaces.WriterObject, tilda.interfaces.OCCObject
  {
    protected static final Logger LOG = LogManager.getLogger(TILDA__ZONEINFO.class.getName());
+
+   public static final Class<TILDA__ZONEINFO_Factory> FACTORY_CLASS= TILDA__ZONEINFO_Factory.class;
+   public static final String TABLENAME = TextUtil.Print("TILDA.ZONEINFO", "");
 
    protected TILDA__ZONEINFO() { }
 
@@ -97,8 +105,8 @@ public abstract class TILDA__ZONEINFO implements tilda.interfaces.WriterObject, 
 
    private long     __Changes= 0L;
 
-   protected boolean hasChanged    () { return __Changes != 0L; }
-   public    boolean isNewlyCreated() { return __NewlyCreated; }
+   public  boolean hasChanged    () { return __Changes != 0L; }
+   public  boolean isNewlyCreated() { return __NewlyCreated; }
 
    void initForCreate()
      {
@@ -136,7 +144,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   protected String _id;
+   String _id;
    protected String __Saved_id;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -220,7 +228,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   protected String _value;
+   String _value;
    protected String __Saved_value;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -325,7 +333,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>ABSOLUTE</TD></TR>
 </TABLE>
 */
-   public String _label;
+   String _label;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -428,7 +436,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-    String _deactivatedTZ;
+   String _deactivatedTZ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -469,7 +477,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDeactivatedTZ()
+   public final boolean isNullDeactivatedTZ()
      { return (TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -581,7 +589,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-    ZonedDateTime _deactivated;
+   ZonedDateTime _deactivated;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -620,7 +628,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDeactivated()
+   public final boolean isNullDeactivated()
      { return (TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -798,14 +806,14 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
 </TABLE>
 */
-    ZonedDateTime _created;
+   ZonedDateTime _created;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -824,8 +832,8 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -851,8 +859,8 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -891,8 +899,8 @@ This is the NOW setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -920,8 +928,8 @@ This is the UNDEFINED setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -949,8 +957,8 @@ This is the explicit setter %%CALENDAR_SETTER%% for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -978,8 +986,8 @@ This is the hasChanged for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1011,14 +1019,14 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
 </TABLE>
 */
-    ZonedDateTime _lastUpdated;
+   ZonedDateTime _lastUpdated;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1037,8 +1045,8 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1064,8 +1072,8 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1102,8 +1110,8 @@ This is the NOW setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1131,8 +1139,8 @@ This is the UNDEFINED setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1160,8 +1168,8 @@ This is the explicit setter %%CALENDAR_SETTER%% for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1189,8 +1197,8 @@ This is the hasChanged for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -1222,7 +1230,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-    ZonedDateTime _deleted;
+   ZonedDateTime _deleted;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1261,7 +1269,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDeleted()
+   public final boolean isNullDeleted()
      { return (TILDA__ZONEINFO_Factory.COLS.DELETED._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1420,7 +1428,7 @@ This is the hasChanged for:<BR>
  Copies all the field which are not part of the primary key, not are CALCULATED and not invariant, from the 
  current object to the destination. 
 */
-   public void CopyTo(tilda.data._tilda.TILDA__ZONEINFO Dst) throws Exception
+   public void CopyTo(tilda.data._Tilda.TILDA__ZONEINFO Dst) throws Exception
      {
        Dst.setLabel        (_label        );
        if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Mask & __Nulls) != 0L) Dst.setNullDeactivatedTZ(); else        Dst.setDeactivatedTZ(_deactivatedTZ);
@@ -1448,7 +1456,7 @@ This is the hasChanged for:<BR>
        if (__Changes == 0L)
         {
           LOG.debug("The tilda.data.TILDA.ZONEINFO has not changed: no writing will occur.");
-          QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.TABLENAME, "");
+          QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, "");
           return true;
         }
 
@@ -1457,36 +1465,37 @@ This is the hasChanged for:<BR>
        if (BeforeWrite(C) == false)
         {
           LOG.debug("The tilda.data.TILDA.ZONEINFO object's BeforeWrite() failed.");
-          QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.TABLENAME, "");
+          QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, "");
           return false;
         }
 
        if (__Init == InitMode.CREATE)
         {
           StringBuilder V = new StringBuilder(1024);
-          S.append("insert into TILDA.ZONEINFO ");
-          if ((TILDA__ZONEINFO_Factory.COLS.ID._Mask            & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.ID._Insert           ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__ZONEINFO_Factory.COLS.VALUE._Mask         & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.VALUE._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__ZONEINFO_Factory.COLS.LABEL._Mask         & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.LABEL._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Mask & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Insert); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
+          S.append("insert into "); C.getFullTableVar(S, "TILDA", "ZONEINFO");
+          int Pos = S.length();
+          if ((TILDA__ZONEINFO_Factory.COLS.ID._Mask            & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.ID.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__ZONEINFO_Factory.COLS.VALUE._Mask         & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.VALUE.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__ZONEINFO_Factory.COLS.LABEL._Mask         & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.LABEL.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Mask & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
 
-          if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask   & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Insert  );
-             V.append((TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deactivated) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
-           }
-
-          if ((TILDA__ZONEINFO_Factory.COLS.CREATED._Mask       & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.CREATED._Insert      );
-             V.append((TILDA__ZONEINFO_Factory.COLS.CREATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_created) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
-           }
-          else { S.append(TILDA__ZONEINFO_Factory.COLS.CREATED._Insert); V.append(tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP); }
-          if ((TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Mask   & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Insert  );
-             V.append((TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_lastUpdated) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
-           }
-          else { S.append(TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Insert); V.append(tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP); }
-          if ((TILDA__ZONEINFO_Factory.COLS.DELETED._Mask       & __Changes) != 0L) { S.append(TILDA__ZONEINFO_Factory.COLS.DELETED._Insert      );
-             V.append((TILDA__ZONEINFO_Factory.COLS.DELETED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deleted) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
+          if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask   & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.DEACTIVATED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deactivated) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
            }
 
-          S.setCharAt(27, '(');
+          if ((TILDA__ZONEINFO_Factory.COLS.CREATED._Mask       & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.CREATED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__ZONEINFO_Factory.COLS.CREATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_created) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
+           }
+          else { TILDA__ZONEINFO_Factory.COLS.CREATED.getFullColumnVarForInsert(C, S); V.append(C.getCommaCurrentTimestamp()); }
+          if ((TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Mask   & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_lastUpdated) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
+           }
+          else { TILDA__ZONEINFO_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S); V.append(C.getCommaCurrentTimestamp()); }
+          if ((TILDA__ZONEINFO_Factory.COLS.DELETED._Mask       & __Changes) != 0L) { TILDA__ZONEINFO_Factory.COLS.DELETED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__ZONEINFO_Factory.COLS.DELETED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deleted) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
+           }
+
+          S.setCharAt(Pos, '(');
           V.setCharAt(0, '(');
           S.append(") values ").append(V).append(')');
           V.setLength(0);
@@ -1494,71 +1503,72 @@ This is the hasChanged for:<BR>
         }
        else // InitMode can be anything else
         {
-          S.append("update TILDA.ZONEINFO set");
-          if ((TILDA__ZONEINFO_Factory.COLS.ID._Mask            & __Changes) != 0L) S.append(TILDA__ZONEINFO_Factory.COLS.ID._Update           );
-          if ((TILDA__ZONEINFO_Factory.COLS.VALUE._Mask         & __Changes) != 0L) S.append(TILDA__ZONEINFO_Factory.COLS.VALUE._Update        );
-          if ((TILDA__ZONEINFO_Factory.COLS.LABEL._Mask         & __Changes) != 0L) S.append(TILDA__ZONEINFO_Factory.COLS.LABEL._Update        );
-          if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Mask & __Changes) != 0L) S.append(TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Update);
+          S.append("update "); C.getFullTableVar(S, "TILDA", "ZONEINFO"); S.append(" set");
+          int Pos = S.length();
+          if ((TILDA__ZONEINFO_Factory.COLS.ID._Mask            & __Changes) != 0L) TILDA__ZONEINFO_Factory.COLS.ID.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__ZONEINFO_Factory.COLS.VALUE._Mask         & __Changes) != 0L) TILDA__ZONEINFO_Factory.COLS.VALUE.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__ZONEINFO_Factory.COLS.LABEL._Mask         & __Changes) != 0L) TILDA__ZONEINFO_Factory.COLS.LABEL.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ._Mask & __Changes) != 0L) TILDA__ZONEINFO_Factory.COLS.DEACTIVATEDTZ.getFullColumnVarForUpdate(C, S);
 
           if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask & __Changes) != 0L)
            {
              if ((TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deactivated) == true)
-              S.append(TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__ZONEINFO_Factory.COLS.DEACTIVATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__ZONEINFO_Factory.COLS.DEACTIVATED._Update);
+              TILDA__ZONEINFO_Factory.COLS.DEACTIVATED.getFullColumnVarForUpdate(C, S);
            }
 
           if ((TILDA__ZONEINFO_Factory.COLS.CREATED._Mask & __Changes) != 0L)
            {
              if ((TILDA__ZONEINFO_Factory.COLS.CREATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_created) == true)
-              S.append(TILDA__ZONEINFO_Factory.COLS.CREATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__ZONEINFO_Factory.COLS.CREATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__ZONEINFO_Factory.COLS.CREATED._Update);
+              TILDA__ZONEINFO_Factory.COLS.CREATED.getFullColumnVarForUpdate(C, S);
            }
 
           if ((TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Mask & __Changes) != 0L)
            {
              if ((TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_lastUpdated) == true)
-              S.append(TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__ZONEINFO_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Update);
+              TILDA__ZONEINFO_Factory.COLS.LASTUPDATED.getFullColumnVarForUpdate(C, S);
            }
           else 
            {
-             S.append(TILDA__ZONEINFO_Factory.COLS.LASTUPDATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+             TILDA__ZONEINFO_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp());
              setLastUpdatedNow();
            }
 
           if ((TILDA__ZONEINFO_Factory.COLS.DELETED._Mask & __Changes) != 0L)
            {
              if ((TILDA__ZONEINFO_Factory.COLS.DELETED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deleted) == true)
-              S.append(TILDA__ZONEINFO_Factory.COLS.DELETED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__ZONEINFO_Factory.COLS.DELETED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__ZONEINFO_Factory.COLS.DELETED._Update);
+              TILDA__ZONEINFO_Factory.COLS.DELETED.getFullColumnVarForUpdate(C, S);
            }
 
           switch (__LookupId)
            {
              case 0:
-                S.append(" where (TILDA.ZONEINFO.\"id\"=?)");
+                S.append(" where ("); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id"); S.append("=?)");
                 break;
              case 1:
-                S.append(" where (TILDA.ZONEINFO.\"id\"=?)");
+                S.append(" where ("); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id"); S.append("=?)");
                 break;
              case 2:
-                S.append(" where (TILDA.ZONEINFO.\"value\"=?)");
+                S.append(" where ("); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "value"); S.append("=?)");
                 break;
              case -666: if (__Init == InitMode.CREATE) break;
              default: throw new Exception("Invalid LookupId "+__LookupId+" found. Cannot create where clause.");
            }
-          S.setCharAt(25, ' ');
+          S.setCharAt(Pos, ' ');
         }
 
        String Q = S.toString();
        S.setLength(0);
        S = null;
-       QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.TABLENAME, Q);
-       LOG.debug("TILDA([7mTILDA.ZONEINFO[27m): "+Q.replaceAll(TILDA__ZONEINFO_Factory.TABLENAME+"\\.",""));
+       QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, Q);
+       LOG.debug("TILDA([7mTILDA.ZONEINFO[27m): "+Q);
        LOG.debug("   "+toString());
        java.sql.PreparedStatement PS = null;
        int count = 0;
@@ -1624,11 +1634,11 @@ This is the hasChanged for:<BR>
        catch (java.sql.SQLException E)
         {
           C.releaseSavepoint(false);
-          return tilda.data._tilda.TILDA__1_0.HandleCatch(C, E, "updated or inserted");
+          return tilda.data._Tilda.TILDA__1_0.HandleCatch(C, E, "updated or inserted");
         }
        finally
         {
-          tilda.data._tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__ZONEINFO_Factory.TABLENAME, __Init == InitMode.CREATE ? StatementType.INSERT : StatementType.UPDATE, count, AllocatedArrays);
+          tilda.data._Tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, __Init == InitMode.CREATE ? StatementType.INSERT : StatementType.UPDATE, count, AllocatedArrays);
           PS = null;
           AllocatedArrays = null;
         }
@@ -1689,21 +1699,30 @@ This is the hasChanged for:<BR>
        if (__Init == InitMode.READ == true && Force == false && __Changes == 0L)
         {
           LOG.debug("This TILDA.ZONEINFO object has already been read.");
-          QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.TABLENAME, "");
+          QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, "");
           return true;
         }
        StringBuilder S = new StringBuilder(1024);
-       S.append("select TILDA.ZONEINFO.\"id\", TILDA.ZONEINFO.\"value\", TILDA.ZONEINFO.\"label\", TILDA.ZONEINFO.\"deactivatedTZ\", TILDA.ZONEINFO.\"deactivated\", TILDA.ZONEINFO.\"created\", TILDA.ZONEINFO.\"lastUpdated\", TILDA.ZONEINFO.\"deleted\" from TILDA.ZONEINFO");
+       S.append("select ");
+       S.append(" "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "value");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "label");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "deactivatedTZ");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "deactivated");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "created");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "lastUpdated");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "deleted");
+       S.append(" from "); C.getFullTableVar(S, "TILDA", "ZONEINFO");
        switch (__LookupId)
         {
           case 0:
-             S.append(" where (TILDA.ZONEINFO.\"id\"=?)");
+             S.append(" where ("); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id"); S.append("=?)");
              break;
           case 1:
-             S.append(" where (TILDA.ZONEINFO.\"id\"=?)");
+             S.append(" where ("); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "id"); S.append("=?)");
              break;
           case 2:
-             S.append(" where (TILDA.ZONEINFO.\"value\"=?)");
+             S.append(" where ("); C.getFullColumnVar(S, "TILDA", "ZONEINFO", "value"); S.append("=?)");
              break;
           case -666: if (__Init == InitMode.CREATE) break;
           default: throw new Exception("Invalid LookupId "+__LookupId+" found. Cannot create where clause.");
@@ -1712,8 +1731,8 @@ This is the hasChanged for:<BR>
        String Q = S.toString();
        S.setLength(0);
        S = null;
-       QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.TABLENAME, Q);
-       LOG.debug("TILDA([7mTILDA.ZONEINFO[27m): "+Q.replaceAll(TILDA__ZONEINFO_Factory.TABLENAME+"\\.",""));
+       QueryDetails.setLastQuery(TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, Q);
+       LOG.debug("TILDA([7mTILDA.ZONEINFO[27m): "+Q);
        LOG.debug("   "+toString());
        java.sql.PreparedStatement PS=null;
        java.sql.ResultSet RS=null;
@@ -1750,20 +1769,20 @@ This is the hasChanged for:<BR>
         }
        catch (java.sql.SQLException E)
         {
-          return tilda.data._tilda.TILDA__1_0.HandleCatch(C, E, "selected");
+          return tilda.data._Tilda.TILDA__1_0.HandleCatch(C, E, "selected");
         }
        finally
         {
-          tilda.data._tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__ZONEINFO_Factory.TABLENAME, StatementType.SELECT, count, AllocatedArrays);
+          tilda.data._Tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__ZONEINFO_Factory.SCHEMA_TABLENAME_LABEL, StatementType.SELECT, count, AllocatedArrays);
           PS = null;
           AllocatedArrays = null;
         }
     }
 
+   @SuppressWarnings("unchecked")
    boolean Init(Connection C, java.sql.ResultSet RS) throws Exception
     {
       int i = 0;
-      java.sql.Array A;
       tilda.data.ZoneInfo_Data ZI;
       boolean DateTimeFieldNull;
       boolean ZoneFieldNull;
@@ -1793,8 +1812,8 @@ This is the hasChanged for:<BR>
       __Nulls |= DTField._Mask;
      boolean DTNull = (__Nulls & DTField._Mask) != 0L;
      boolean TZNull = (__Nulls & TZField._Mask) != 0L;
-     if (DTNull != TZNull)
-      throw new Exception("The field "+DTFieldName+" (null=" + DTNull + ") is inconsistent with its associated field '"+DTFieldName+"TZ' (null=" + TZNull + "). They both should be null or not null.");
+     if (DTNull == false && TZNull == true)
+      throw new Exception("The field "+DTFieldName+" is not null while its associated timezone field '"+DTFieldName+"TZ' is null. A TZ is mandatory for not null timestamps.");
      return ZDT;
    }
 

@@ -4,7 +4,7 @@
  Code is generated: do not modify! Instead, create a derived class and override desired functionality
 */
 
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -49,8 +49,11 @@ import tilda.utils.TextUtil;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
-This is the Java 8/PostgreSQL Tilda data class <B>Data_TESTING</B> mapped to the table <B>TILDA.TESTING</B>.
+<DIV id='TESTING_DIV'>
+<H1>TESTING</H1>
+The generated Java 8/PostgreSQL Tilda data class <B>Data_TESTING</B> is mapped to the table <B>TILDA.TESTING</B>.
 <UL>
+
 <LI>The Object has normal <B>read/write</B> capabilities.</LI>
 <LI>The Object is OCC-enabled. Default created/lastUpdated/deleted columns will be automatically generated.</LI>
 </UL>
@@ -58,59 +61,64 @@ This is the Java 8/PostgreSQL Tilda data class <B>Data_TESTING</B> mapped to the
 <BR>
 It contains the following columns:<BR>
  <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Type&nbsp;&nbsp;</TH><TH>Column&nbsp;&nbsp;</TH><TH>Type&nbsp;&nbsp;</TH><TH>Nullable&nbsp;&nbsp;</TH><TH>Mode&nbsp;&nbsp;</TH><TH>Invariant&nbsp;&nbsp;</TH><TH>Protect&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>refnum</B>&nbsp;&nbsp;</TD><TD>long&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.refnum</B>&nbsp;&nbsp;</TD><TD>bigint&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The primary key for this record</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>1&nbsp;&nbsp;</TD><TD align="right"><B>refnum2</B>&nbsp;&nbsp;</TD><TD>List<Long         > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.refnum2</B>&nbsp;&nbsp;</TD><TD>bigint[]&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The person's primary key</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>2&nbsp;&nbsp;</TD><TD align="right"><B>name</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.name</B>&nbsp;&nbsp;</TD><TD>character(10)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>Medical system unique enterprise id</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>3&nbsp;&nbsp;</TD><TD align="right"><B>description</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.description</B>&nbsp;&nbsp;</TD><TD>varchar(250)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>4&nbsp;&nbsp;</TD><TD align="right"><B>desc2</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc2</B>&nbsp;&nbsp;</TD><TD>varchar(3000)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>5&nbsp;&nbsp;</TD><TD align="right"><B>desc3</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc3</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>6&nbsp;&nbsp;</TD><TD align="right"><B>desc4</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc4</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>7&nbsp;&nbsp;</TD><TD align="right"><B>desc5</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc5</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>8&nbsp;&nbsp;</TD><TD align="right"><B>desc6</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc6</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>9&nbsp;&nbsp;</TD><TD align="right"><B>tops</B>&nbsp;&nbsp;</TD><TD>List<String       > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.tops</B>&nbsp;&nbsp;</TD><TD>text[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>10&nbsp;&nbsp;</TD><TD align="right"><B>tops2</B>&nbsp;&nbsp;</TD><TD>Set <String       > Set<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.tops2</B>&nbsp;&nbsp;</TD><TD>text[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>11&nbsp;&nbsp;</TD><TD align="right"><B>a1</B>&nbsp;&nbsp;</TD><TD>int&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a1</B>&nbsp;&nbsp;</TD><TD>INTEGER&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>12&nbsp;&nbsp;</TD><TD align="right"><B>a2</B>&nbsp;&nbsp;</TD><TD>char&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a2</B>&nbsp;&nbsp;</TD><TD>character&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>13&nbsp;&nbsp;</TD><TD align="right"><B>a2b</B>&nbsp;&nbsp;</TD><TD>List<Character    > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a2b</B>&nbsp;&nbsp;</TD><TD>character[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>14&nbsp;&nbsp;</TD><TD align="right"><B>a2c</B>&nbsp;&nbsp;</TD><TD>Set <Character    > Set<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a2c</B>&nbsp;&nbsp;</TD><TD>character[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>15&nbsp;&nbsp;</TD><TD align="right"><B>a3</B>&nbsp;&nbsp;</TD><TD>boolean&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a3</B>&nbsp;&nbsp;</TD><TD>boolean&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>16&nbsp;&nbsp;</TD><TD align="right"><B>a3b</B>&nbsp;&nbsp;</TD><TD>List<Boolean      > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a3b</B>&nbsp;&nbsp;</TD><TD>boolean[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>17&nbsp;&nbsp;</TD><TD align="right"><B>a4</B>&nbsp;&nbsp;</TD><TD>double&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a4</B>&nbsp;&nbsp;</TD><TD>double precision&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>18&nbsp;&nbsp;</TD><TD align="right"><B>a4b</B>&nbsp;&nbsp;</TD><TD>List<Double       > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a4b</B>&nbsp;&nbsp;</TD><TD>double precision[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>19&nbsp;&nbsp;</TD><TD align="right"><B>a5</B>&nbsp;&nbsp;</TD><TD>float&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a5</B>&nbsp;&nbsp;</TD><TD>real&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>20&nbsp;&nbsp;</TD><TD align="right"><B>a5b</B>&nbsp;&nbsp;</TD><TD>List<Float        > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a5b</B>&nbsp;&nbsp;</TD><TD>real[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>21&nbsp;&nbsp;</TD><TD align="right"><B>a6</B>&nbsp;&nbsp;</TD><TD>long&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a6</B>&nbsp;&nbsp;</TD><TD>bigint&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>22&nbsp;&nbsp;</TD><TD align="right"><B>a6b</B>&nbsp;&nbsp;</TD><TD>List<Long         > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a6b</B>&nbsp;&nbsp;</TD><TD>bigint[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>23&nbsp;&nbsp;</TD><TD align="right"><B>a6c</B>&nbsp;&nbsp;</TD><TD>Set <Long         > Set<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a6c</B>&nbsp;&nbsp;</TD><TD>bigint[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>24&nbsp;&nbsp;</TD><TD align="right"><B>a7</B>&nbsp;&nbsp;</TD><TD>int&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a7</B>&nbsp;&nbsp;</TD><TD>integer&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>25&nbsp;&nbsp;</TD><TD align="right"><B>a7b</B>&nbsp;&nbsp;</TD><TD>List<Integer      > List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a7b</B>&nbsp;&nbsp;</TD><TD>integer[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>26&nbsp;&nbsp;</TD><TD align="right"><B>a8</B>&nbsp;&nbsp;</TD><TD>byte[]&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a8</B>&nbsp;&nbsp;</TD><TD>BYTEA&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>27&nbsp;&nbsp;</TD><TD align="right"><B>a9TZ</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a9TZ</B>&nbsp;&nbsp;</TD><TD>character(5)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>Generated helper column to hold the time zone ID for 'a9'.</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>28&nbsp;&nbsp;</TD><TD align="right"><B>a9</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a9</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>29&nbsp;&nbsp;</TD><TD align="right"><B>created</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.created</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was created.</TD></TR>
-  <TR bgcolor="#EEEEEE"><TD></TD><TD></TD><TD colspan="10" align="center">
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
-</TABLE>
-</TD></TR>
-  <TR valign="top" bgcolor="#FFFFFF"><TD>30&nbsp;&nbsp;</TD><TD align="right"><B>lastUpdated</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.lastUpdated</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was last updated.</TD></TR>
+   <TR><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH align="left">Type</TH><TH align="left">Column</TH><TH align="left">Type</TH><TH align="left">Nullable</TH><TH align="left">Mode</TH><TH align="left">Invariant</TH><TH align="left">Protect</TH><TH align="left">Description</TH></TR>
+
+  <TR valign="top" bgcolor="#EEEEEE"><TD>1&nbsp;&nbsp;</TD><TD align="right"><B>refnum</B>&nbsp;&nbsp;</TD><TD>long&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.refnum</B>&nbsp;&nbsp;</TD><TD>bigint&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The primary key for this record</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>2&nbsp;&nbsp;</TD><TD align="right"><B>refnum2</B>&nbsp;&nbsp;</TD><TD>List<Long> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.refnum2</B>&nbsp;&nbsp;</TD><TD>bigint[]&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The person's primary key</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>3&nbsp;&nbsp;</TD><TD align="right"><B>name</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.name</B>&nbsp;&nbsp;</TD><TD>character(10)&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>Medical system unique enterprise id</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>4&nbsp;&nbsp;</TD><TD align="right"><B>description</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.description</B>&nbsp;&nbsp;</TD><TD>varchar(250)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>5&nbsp;&nbsp;</TD><TD align="right"><B>desc2</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc2</B>&nbsp;&nbsp;</TD><TD>varchar(3000)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>6&nbsp;&nbsp;</TD><TD align="right"><B>desc3</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc3</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>7&nbsp;&nbsp;</TD><TD align="right"><B>desc4</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc4</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>8&nbsp;&nbsp;</TD><TD align="right"><B>desc5</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc5</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>9&nbsp;&nbsp;</TD><TD align="right"><B>desc6</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.desc6</B>&nbsp;&nbsp;</TD><TD>text&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The title for a person, i.e., Mr, Miss, Mrs...</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>10&nbsp;&nbsp;</TD><TD align="right"><B>tops</B>&nbsp;&nbsp;</TD><TD>List<String> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.tops</B>&nbsp;&nbsp;</TD><TD>text[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>11&nbsp;&nbsp;</TD><TD align="right"><B>tops2</B>&nbsp;&nbsp;</TD><TD>Set <String> Set<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.tops2</B>&nbsp;&nbsp;</TD><TD>text[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>12&nbsp;&nbsp;</TD><TD align="right"><B>a1</B>&nbsp;&nbsp;</TD><TD>int&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a1</B>&nbsp;&nbsp;</TD><TD>INTEGER&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>13&nbsp;&nbsp;</TD><TD align="right"><B>a2</B>&nbsp;&nbsp;</TD><TD>char&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a2</B>&nbsp;&nbsp;</TD><TD>character&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>14&nbsp;&nbsp;</TD><TD align="right"><B>a2b</B>&nbsp;&nbsp;</TD><TD>List<Character> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a2b</B>&nbsp;&nbsp;</TD><TD>character[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>15&nbsp;&nbsp;</TD><TD align="right"><B>a2c</B>&nbsp;&nbsp;</TD><TD>Set <Character> Set<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a2c</B>&nbsp;&nbsp;</TD><TD>character[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>16&nbsp;&nbsp;</TD><TD align="right"><B>a3</B>&nbsp;&nbsp;</TD><TD>boolean&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a3</B>&nbsp;&nbsp;</TD><TD>boolean&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>17&nbsp;&nbsp;</TD><TD align="right"><B>a3b</B>&nbsp;&nbsp;</TD><TD>List<Boolean> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a3b</B>&nbsp;&nbsp;</TD><TD>boolean[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>18&nbsp;&nbsp;</TD><TD align="right"><B>a4</B>&nbsp;&nbsp;</TD><TD>double&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a4</B>&nbsp;&nbsp;</TD><TD>double precision&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>19&nbsp;&nbsp;</TD><TD align="right"><B>a4b</B>&nbsp;&nbsp;</TD><TD>List<Double> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a4b</B>&nbsp;&nbsp;</TD><TD>double precision[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>20&nbsp;&nbsp;</TD><TD align="right"><B>a5</B>&nbsp;&nbsp;</TD><TD>float&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a5</B>&nbsp;&nbsp;</TD><TD>real&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>21&nbsp;&nbsp;</TD><TD align="right"><B>a5b</B>&nbsp;&nbsp;</TD><TD>List<Float> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a5b</B>&nbsp;&nbsp;</TD><TD>real[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>22&nbsp;&nbsp;</TD><TD align="right"><B>a6</B>&nbsp;&nbsp;</TD><TD>long&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a6</B>&nbsp;&nbsp;</TD><TD>bigint&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>23&nbsp;&nbsp;</TD><TD align="right"><B>a6b</B>&nbsp;&nbsp;</TD><TD>List<Long> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a6b</B>&nbsp;&nbsp;</TD><TD>bigint[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>24&nbsp;&nbsp;</TD><TD align="right"><B>a6c</B>&nbsp;&nbsp;</TD><TD>Set <Long> Set<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a6c</B>&nbsp;&nbsp;</TD><TD>bigint[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>25&nbsp;&nbsp;</TD><TD align="right"><B>a7</B>&nbsp;&nbsp;</TD><TD>int&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a7</B>&nbsp;&nbsp;</TD><TD>integer&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>26&nbsp;&nbsp;</TD><TD align="right"><B>a7b</B>&nbsp;&nbsp;</TD><TD>List<Integer> List<>&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a7b</B>&nbsp;&nbsp;</TD><TD>integer[]&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>27&nbsp;&nbsp;</TD><TD align="right"><B>a8</B>&nbsp;&nbsp;</TD><TD>byte[]&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a8</B>&nbsp;&nbsp;</TD><TD>BYTEA&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>28&nbsp;&nbsp;</TD><TD align="right"><B>a9TZ</B>&nbsp;&nbsp;</TD><TD>String&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a9TZ</B>&nbsp;&nbsp;</TD><TD>character(5)&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>Generated helper column to hold the time zone ID for 'a9'.</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>29&nbsp;&nbsp;</TD><TD align="right"><B>a9</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.a9</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The blah</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>30&nbsp;&nbsp;</TD><TD align="right"><B>created</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.created</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>true&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was created.</TD></TR>
   <TR bgcolor="#FFFFFF"><TD></TD><TD></TD><TD colspan="10" align="center">
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
-  <TR valign="top" bgcolor="#EEEEEE"><TD>31&nbsp;&nbsp;</TD><TD align="right"><B>deleted</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.deleted</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was deleted.</TD></TR>
+  <TR valign="top" bgcolor="#EEEEEE"><TD>31&nbsp;&nbsp;</TD><TD align="right"><B>lastUpdated</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.lastUpdated</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>false&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was last updated.</TD></TR>
+  <TR bgcolor="#EEEEEE"><TD></TD><TD></TD><TD colspan="10" align="center">
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
+</TD></TR>
+  <TR valign="top" bgcolor="#FFFFFF"><TD>32&nbsp;&nbsp;</TD><TD align="right"><B>deleted</B>&nbsp;&nbsp;</TD><TD>ZonedDateTime&nbsp;&nbsp;</TD><TD><B>TILDA.TESTING.deleted</B>&nbsp;&nbsp;</TD><TD>timestamptz&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>AUTO&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>-&nbsp;&nbsp;</TD><TD>The timestamp for when the record was deleted.</TD></TR>
+</TABLE>
+</DIV>
 
  @author   Tilda code gen for Java 8/PostgreSQL
  @version  Tilda 1.0
- @generated Dec 5 2015, 11:56:26IST
+ @generated Jul 5 2016, 03:06:35EDT
 */
-@SuppressWarnings({ "unchecked", "unused" })
+@SuppressWarnings({ "unused" })
 public abstract class TILDA__TESTING implements tilda.interfaces.WriterObject, tilda.interfaces.OCCObject, tilda.interfaces.JSONable
  {
    protected static final Logger LOG = LogManager.getLogger(TILDA__TESTING.class.getName());
+
+   public static final Class<TILDA__TESTING_Factory> FACTORY_CLASS= TILDA__TESTING_Factory.class;
+   public static final String TABLENAME = TextUtil.Print("TILDA.TESTING", "");
 
    protected TILDA__TESTING() { }
 
@@ -121,8 +129,8 @@ public abstract class TILDA__TESTING implements tilda.interfaces.WriterObject, t
 
    private long     __Changes= 0L;
 
-   protected boolean hasChanged    () { return __Changes != 0L; }
-   public    boolean isNewlyCreated() { return __NewlyCreated; }
+   public  boolean hasChanged    () { return __Changes != 0L; }
+   public  boolean isNewlyCreated() { return __NewlyCreated; }
 
    void initForCreate()
      {
@@ -159,7 +167,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   protected long _refnum= SystemValues.EVIL_VALUE;
+   long _refnum= SystemValues.EVIL_VALUE;
    protected long __Saved_refnum;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -226,7 +234,7 @@ This is the setter for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.refnum2 of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>false</TD></TR>
@@ -236,7 +244,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   protected List<Long         > _refnum2= new ArrayList<Long         >();
+   List<Long> _refnum2= new ArrayList<Long>();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -245,7 +253,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.refnum2 of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>false</TD></TR>
@@ -255,7 +263,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Long         > getRefnum2()
+   public final Iterator<Long> getRefnum2()
       { return _refnum2==null? null : _refnum2.iterator(); }
    public final boolean hasRefnum2(long v)
       { return _refnum2==null? false : _refnum2.contains(v); }
@@ -267,7 +275,7 @@ This is the getter for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.refnum2 of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>false</TD></TR>
@@ -277,7 +285,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   protected void setRefnum2(List<Long         > v) throws Exception
+   protected void setRefnum2(List<Long> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (__Init != InitMode.CREATE && __Init != InitMode.LOOKUP)
@@ -289,7 +297,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.REFNUM2._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.REFNUM2._Mask;
           if (_refnum2 == null)
-           _refnum2 = new ArrayList<Long         >();
+           _refnum2 = new ArrayList<Long>();
           else
            _refnum2.clear();
           for (long i : v)
@@ -303,7 +311,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_refnum2 == null)
-        _refnum2 = new ArrayList<Long         >();
+        _refnum2 = new ArrayList<Long>();
        if (_refnum2.get(pos).equals(v) == false)
         {
           if (__Init != InitMode.CREATE && __Init != InitMode.LOOKUP)
@@ -314,7 +322,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   protected void removeFromRefnum2(Long          v) throws Exception
+   protected void removeFromRefnum2(Long v) throws Exception
      {
        if (_refnum2.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.REFNUM2._Mask;
@@ -334,7 +342,7 @@ This is the setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.refnum2 of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.refnum2 of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>false</TD></TR>
@@ -371,7 +379,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _name;
+   String _name;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -473,7 +481,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _description;
+   String _description;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -514,7 +522,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDescription()
+   public final boolean isNullDescription()
      { return (TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -627,7 +635,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _desc2;
+   String _desc2;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -668,7 +676,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDesc2()
+   public final boolean isNullDesc2()
      { return (TILDA__TESTING_Factory.COLS.DESC2._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -781,7 +789,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _desc3;
+   String _desc3;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -822,7 +830,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDesc3()
+   public final boolean isNullDesc3()
      { return (TILDA__TESTING_Factory.COLS.DESC3._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -935,7 +943,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _desc4;
+   String _desc4;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -976,7 +984,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDesc4()
+   public final boolean isNullDesc4()
      { return (TILDA__TESTING_Factory.COLS.DESC4._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1089,7 +1097,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _desc5;
+   String _desc5;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1130,7 +1138,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDesc5()
+   public final boolean isNullDesc5()
      { return (TILDA__TESTING_Factory.COLS.DESC5._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1243,7 +1251,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public String _desc6;
+   String _desc6;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1284,7 +1292,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDesc6()
+   public final boolean isNullDesc6()
      { return (TILDA__TESTING_Factory.COLS.DESC6._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1386,7 +1394,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1397,7 +1405,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<String       > _tops;
+   List<String> _tops;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1406,7 +1414,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1417,7 +1425,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<String       > getTops()
+   public final Iterator<String> getTops()
       { return _tops==null? null : _tops.iterator(); }
    public final boolean hasTops(String v)
       { return _tops==null? false : _tops.contains(v); }
@@ -1429,7 +1437,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1440,7 +1448,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullTops()
+   public final boolean isNullTops()
      { return (TILDA__TESTING_Factory.COLS.TOPS._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1450,7 +1458,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1461,7 +1469,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setTops(List<String       > v) throws Exception
+   public void setTops(List<String> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -1471,7 +1479,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.TOPS._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.TOPS._Mask;
           if (_tops == null)
-           _tops = new ArrayList<String       >();
+           _tops = new ArrayList<String>();
           else
            _tops.clear();
           for (String i : v)
@@ -1485,7 +1493,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_tops == null)
-        _tops = new ArrayList<String       >();
+        _tops = new ArrayList<String>();
        if (v == null)
         {
           setNullTops();
@@ -1498,7 +1506,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromTops(String        v) throws Exception
+   public void removeFromTops(String v) throws Exception
      {
        if (_tops.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.TOPS._Mask;
@@ -1518,7 +1526,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1547,7 +1555,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops of type List<String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1574,7 +1582,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops2 of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1585,7 +1593,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public Set <String       > _tops2;
+   Set <String> _tops2;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1594,7 +1602,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops2 of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1605,7 +1613,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<String       > getTops2()
+   public final Iterator<String> getTops2()
       { return _tops2==null? null : _tops2.iterator(); }
    public final boolean hasTops2(String v)
       { return _tops2==null? false : _tops2.contains(v); }
@@ -1617,7 +1625,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops2 of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1628,7 +1636,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullTops2()
+   public final boolean isNullTops2()
      { return (TILDA__TESTING_Factory.COLS.TOPS2._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1638,7 +1646,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops2 of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1649,7 +1657,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setTops2(Set <String       > v) throws Exception
+   public void setTops2(Set <String> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -1659,7 +1667,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.TOPS2._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.TOPS2._Mask;
           if (_tops2 == null)
-           _tops2 = new TreeSet<String       >();
+           _tops2 = new TreeSet<String>();
           else
            _tops2.clear();
           for (String i : v)
@@ -1673,7 +1681,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_tops2 == null)
-        _tops2 = new TreeSet<String       >();
+        _tops2 = new TreeSet<String>();
        if (v == null)
         {
           setNullTops2();
@@ -1686,7 +1694,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromTops2(String        v) throws Exception
+   public void removeFromTops2(String v) throws Exception
      {
        if (_tops2.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.TOPS2._Mask;
@@ -1699,7 +1707,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops2 of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1728,7 +1736,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.tops2 of type Set <String></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.tops2 of type text[]</TD></TR>
 
   <TR><TD align="right"><B>Size</B></TD><TD>null</TD></TR>
@@ -1765,7 +1773,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public int _a1;
+   int _a1;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1804,7 +1812,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA1()
+   public final boolean isNullA1()
      { return (TILDA__TESTING_Factory.COLS.A1._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1907,7 +1915,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public char _a2= Character.UNASSIGNED;
+   char _a2= Character.UNASSIGNED;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1946,7 +1954,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA2()
+   public final boolean isNullA2()
      { return (TILDA__TESTING_Factory.COLS.A2._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2039,7 +2047,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2b of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2049,7 +2057,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<Character    > _a2b;
+   List<Character> _a2b;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2058,7 +2066,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2b of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2068,7 +2076,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Character    > getA2b()
+   public final Iterator<Character> getA2b()
       { return _a2b==null? null : _a2b.iterator(); }
    public final boolean hasA2b(char v)
       { return _a2b==null? false : _a2b.contains(v); }
@@ -2080,7 +2088,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2b of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2090,7 +2098,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA2b()
+   public final boolean isNullA2b()
      { return (TILDA__TESTING_Factory.COLS.A2B._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2100,7 +2108,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2b of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2110,7 +2118,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA2b(List<Character    > v) throws Exception
+   public void setA2b(List<Character> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -2120,7 +2128,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A2B._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A2B._Mask;
           if (_a2b == null)
-           _a2b = new ArrayList<Character    >();
+           _a2b = new ArrayList<Character>();
           else
            _a2b.clear();
           for (char i : v)
@@ -2134,7 +2142,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a2b == null)
-        _a2b = new ArrayList<Character    >();
+        _a2b = new ArrayList<Character>();
        if (_a2b.get(pos).equals(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A2B._Mask;
@@ -2143,7 +2151,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA2b(Character     v) throws Exception
+   public void removeFromA2b(Character v) throws Exception
      {
        if (_a2b.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A2B._Mask;
@@ -2163,7 +2171,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2b of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2191,7 +2199,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2b of type List<Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2b of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2217,7 +2225,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2c of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2227,7 +2235,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public Set <Character    > _a2c;
+   Set <Character> _a2c;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2236,7 +2244,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2c of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2246,7 +2254,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Character    > getA2c()
+   public final Iterator<Character> getA2c()
       { return _a2c==null? null : _a2c.iterator(); }
    public final boolean hasA2c(char v)
       { return _a2c==null? false : _a2c.contains(v); }
@@ -2258,7 +2266,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2c of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2268,7 +2276,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA2c()
+   public final boolean isNullA2c()
      { return (TILDA__TESTING_Factory.COLS.A2C._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2278,7 +2286,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2c of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2288,7 +2296,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA2c(Set <Character    > v) throws Exception
+   public void setA2c(Set <Character> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -2298,7 +2306,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A2C._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A2C._Mask;
           if (_a2c == null)
-           _a2c = new TreeSet<Character    >();
+           _a2c = new TreeSet<Character>();
           else
            _a2c.clear();
           for (char i : v)
@@ -2312,7 +2320,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a2c == null)
-        _a2c = new TreeSet<Character    >();
+        _a2c = new TreeSet<Character>();
        if (_a2c.contains(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A2C._Mask;
@@ -2321,7 +2329,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA2c(Character     v) throws Exception
+   public void removeFromA2c(Character v) throws Exception
      {
        if (_a2c.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A2C._Mask;
@@ -2334,7 +2342,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2c of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2362,7 +2370,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character    ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a2c of type Set <Character></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a2c of type character[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2398,7 +2406,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean _a3;
+   boolean _a3;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2437,7 +2445,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA3()
+   public final boolean isNullA3()
      { return (TILDA__TESTING_Factory.COLS.A3._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2530,7 +2538,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a3b of type boolean[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2540,7 +2548,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<Boolean      > _a3b;
+   List<Boolean> _a3b;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2549,7 +2557,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a3b of type boolean[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2559,7 +2567,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Boolean      > getA3b()
+   public final Iterator<Boolean> getA3b()
       { return _a3b==null? null : _a3b.iterator(); }
    public final boolean hasA3b(boolean v)
       { return _a3b==null? false : _a3b.contains(v); }
@@ -2571,7 +2579,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a3b of type boolean[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2581,7 +2589,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA3b()
+   public final boolean isNullA3b()
      { return (TILDA__TESTING_Factory.COLS.A3B._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2591,7 +2599,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a3b of type boolean[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2601,7 +2609,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA3b(List<Boolean      > v) throws Exception
+   public void setA3b(List<Boolean> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -2611,7 +2619,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A3B._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A3B._Mask;
           if (_a3b == null)
-           _a3b = new ArrayList<Boolean      >();
+           _a3b = new ArrayList<Boolean>();
           else
            _a3b.clear();
           for (boolean i : v)
@@ -2625,7 +2633,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a3b == null)
-        _a3b = new ArrayList<Boolean      >();
+        _a3b = new ArrayList<Boolean>();
        if (_a3b.get(pos).equals(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A3B._Mask;
@@ -2634,7 +2642,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA3b(Boolean       v) throws Exception
+   public void removeFromA3b(Boolean v) throws Exception
      {
        if (_a3b.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A3B._Mask;
@@ -2654,7 +2662,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a3b of type boolean[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2682,7 +2690,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a3b of type List<Boolean></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a3b of type boolean[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2718,7 +2726,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public double _a4= SystemValues.EVIL_VALUE;
+   double _a4= SystemValues.EVIL_VALUE;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2757,7 +2765,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA4()
+   public final boolean isNullA4()
      { return (TILDA__TESTING_Factory.COLS.A4._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2850,7 +2858,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a4b of type double precision[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2860,7 +2868,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<Double       > _a4b;
+   List<Double> _a4b;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2869,7 +2877,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a4b of type double precision[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2879,7 +2887,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Double       > getA4b()
+   public final Iterator<Double> getA4b()
       { return _a4b==null? null : _a4b.iterator(); }
    public final boolean hasA4b(double v)
       { return _a4b==null? false : _a4b.contains(v); }
@@ -2891,7 +2899,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a4b of type double precision[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2901,7 +2909,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA4b()
+   public final boolean isNullA4b()
      { return (TILDA__TESTING_Factory.COLS.A4B._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2911,7 +2919,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a4b of type double precision[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -2921,7 +2929,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA4b(List<Double       > v) throws Exception
+   public void setA4b(List<Double> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -2931,7 +2939,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A4B._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A4B._Mask;
           if (_a4b == null)
-           _a4b = new ArrayList<Double       >();
+           _a4b = new ArrayList<Double>();
           else
            _a4b.clear();
           for (double i : v)
@@ -2945,7 +2953,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a4b == null)
-        _a4b = new ArrayList<Double       >();
+        _a4b = new ArrayList<Double>();
        if (_a4b.get(pos).equals(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A4B._Mask;
@@ -2954,7 +2962,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA4b(Double        v) throws Exception
+   public void removeFromA4b(Double v) throws Exception
      {
        if (_a4b.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A4B._Mask;
@@ -2974,7 +2982,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a4b of type double precision[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3002,7 +3010,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double       ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a4b of type List<Double></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a4b of type double precision[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3038,7 +3046,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public float _a5= SystemValues.EVIL_VALUE;
+   float _a5= SystemValues.EVIL_VALUE;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3077,7 +3085,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA5()
+   public final boolean isNullA5()
      { return (TILDA__TESTING_Factory.COLS.A5._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3170,7 +3178,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float        ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a5b of type real[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3180,7 +3188,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<Float        > _a5b;
+   List<Float> _a5b;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3189,7 +3197,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float        ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a5b of type real[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3199,7 +3207,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Float        > getA5b()
+   public final Iterator<Float> getA5b()
       { return _a5b==null? null : _a5b.iterator(); }
    public final boolean hasA5b(float v)
       { return _a5b==null? false : _a5b.contains(v); }
@@ -3211,7 +3219,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float        ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a5b of type real[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3221,7 +3229,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA5b()
+   public final boolean isNullA5b()
      { return (TILDA__TESTING_Factory.COLS.A5B._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3231,7 +3239,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float        ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a5b of type real[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3241,7 +3249,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA5b(List<Float        > v) throws Exception
+   public void setA5b(List<Float> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -3251,7 +3259,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A5B._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A5B._Mask;
           if (_a5b == null)
-           _a5b = new ArrayList<Float        >();
+           _a5b = new ArrayList<Float>();
           else
            _a5b.clear();
           for (float i : v)
@@ -3265,7 +3273,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a5b == null)
-        _a5b = new ArrayList<Float        >();
+        _a5b = new ArrayList<Float>();
        if (_a5b.get(pos).equals(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A5B._Mask;
@@ -3274,7 +3282,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA5b(Float         v) throws Exception
+   public void removeFromA5b(Float v) throws Exception
      {
        if (_a5b.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A5B._Mask;
@@ -3294,7 +3302,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float        ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a5b of type real[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3322,7 +3330,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float        ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a5b of type List<Float></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a5b of type real[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3358,7 +3366,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public long _a6= SystemValues.EVIL_VALUE;
+   long _a6= SystemValues.EVIL_VALUE;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3397,7 +3405,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA6()
+   public final boolean isNullA6()
      { return (TILDA__TESTING_Factory.COLS.A6._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3490,7 +3498,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6b of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3500,7 +3508,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<Long         > _a6b;
+   List<Long> _a6b;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3509,7 +3517,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6b of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3519,7 +3527,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Long         > getA6b()
+   public final Iterator<Long> getA6b()
       { return _a6b==null? null : _a6b.iterator(); }
    public final boolean hasA6b(long v)
       { return _a6b==null? false : _a6b.contains(v); }
@@ -3531,7 +3539,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6b of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3541,7 +3549,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA6b()
+   public final boolean isNullA6b()
      { return (TILDA__TESTING_Factory.COLS.A6B._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3551,7 +3559,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6b of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3561,7 +3569,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA6b(List<Long         > v) throws Exception
+   public void setA6b(List<Long> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -3571,7 +3579,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A6B._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A6B._Mask;
           if (_a6b == null)
-           _a6b = new ArrayList<Long         >();
+           _a6b = new ArrayList<Long>();
           else
            _a6b.clear();
           for (long i : v)
@@ -3585,7 +3593,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a6b == null)
-        _a6b = new ArrayList<Long         >();
+        _a6b = new ArrayList<Long>();
        if (_a6b.get(pos).equals(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A6B._Mask;
@@ -3594,7 +3602,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA6b(Long          v) throws Exception
+   public void removeFromA6b(Long v) throws Exception
      {
        if (_a6b.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A6B._Mask;
@@ -3614,7 +3622,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6b of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3642,7 +3650,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6b of type List<Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6b of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3668,7 +3676,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6c of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3678,7 +3686,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public Set <Long         > _a6c;
+   Set <Long> _a6c;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3687,7 +3695,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6c of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3697,7 +3705,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Long         > getA6c()
+   public final Iterator<Long> getA6c()
       { return _a6c==null? null : _a6c.iterator(); }
    public final boolean hasA6c(long v)
       { return _a6c==null? false : _a6c.contains(v); }
@@ -3709,7 +3717,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6c of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3719,7 +3727,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA6c()
+   public final boolean isNullA6c()
      { return (TILDA__TESTING_Factory.COLS.A6C._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3729,7 +3737,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6c of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3739,7 +3747,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA6c(Set <Long         > v) throws Exception
+   public void setA6c(Set <Long> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -3749,7 +3757,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A6C._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A6C._Mask;
           if (_a6c == null)
-           _a6c = new TreeSet<Long         >();
+           _a6c = new TreeSet<Long>();
           else
            _a6c.clear();
           for (long i : v)
@@ -3763,7 +3771,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a6c == null)
-        _a6c = new TreeSet<Long         >();
+        _a6c = new TreeSet<Long>();
        if (_a6c.contains(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A6C._Mask;
@@ -3772,7 +3780,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA6c(Long          v) throws Exception
+   public void removeFromA6c(Long v) throws Exception
      {
        if (_a6c.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A6C._Mask;
@@ -3785,7 +3793,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6c of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3813,7 +3821,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long         ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a6c of type Set <Long></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a6c of type bigint[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3849,7 +3857,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public int _a7= SystemValues.EVIL_VALUE;
+   int _a7= SystemValues.EVIL_VALUE;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3888,7 +3896,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA7()
+   public final boolean isNullA7()
      { return (TILDA__TESTING_Factory.COLS.A7._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3981,7 +3989,7 @@ This is the hasChanged for:<BR>
 /**
 This is the definition for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a7b of type integer[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -3991,7 +3999,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public List<Integer      > _a7b;
+   List<Integer> _a7b;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4000,7 +4008,7 @@ This is the definition for:<BR>
 /**
 This is the getter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a7b of type integer[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -4010,7 +4018,7 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public final Iterator<Integer      > getA7b()
+   public final Iterator<Integer> getA7b()
       { return _a7b==null? null : _a7b.iterator(); }
    public final boolean hasA7b(int v)
       { return _a7b==null? false : _a7b.contains(v); }
@@ -4022,7 +4030,7 @@ This is the getter for:<BR>
 /**
 This is the isNull for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a7b of type integer[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -4032,7 +4040,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA7b()
+   public final boolean isNullA7b()
      { return (TILDA__TESTING_Factory.COLS.A7B._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4042,7 +4050,7 @@ This is the isNull for:<BR>
 /**
 This is the setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a7b of type integer[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -4052,7 +4060,7 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public void setA7b(List<Integer      > v) throws Exception
+   public void setA7b(List<Integer> v) throws Exception
      {
        long T0 = System.nanoTime();
        if (v == null)
@@ -4062,7 +4070,7 @@ This is the setter for:<BR>
           __Changes |= TILDA__TESTING_Factory.COLS.A7B._Mask;
           __Nulls   &= ~TILDA__TESTING_Factory.COLS.A7B._Mask;
           if (_a7b == null)
-           _a7b = new ArrayList<Integer      >();
+           _a7b = new ArrayList<Integer>();
           else
            _a7b.clear();
           for (int i : v)
@@ -4076,7 +4084,7 @@ This is the setter for:<BR>
      {
        long T0 = System.nanoTime();
        if (_a7b == null)
-        _a7b = new ArrayList<Integer      >();
+        _a7b = new ArrayList<Integer>();
        if (_a7b.get(pos).equals(v) == false)
         {
           __Changes |= TILDA__TESTING_Factory.COLS.A7B._Mask;
@@ -4085,7 +4093,7 @@ This is the setter for:<BR>
         }
        PerfTracker.add(TransactionType.TILDA_SETTER, System.nanoTime() - T0);
      }
-   public void removeFromA7b(Integer       v) throws Exception
+   public void removeFromA7b(Integer v) throws Exception
      {
        if (_a7b.remove(v) == true)
           __Changes |= TILDA__TESTING_Factory.COLS.A7B._Mask;
@@ -4105,7 +4113,7 @@ This is the setter for:<BR>
 /**
 This is the null setter for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a7b of type integer[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -4133,7 +4141,7 @@ This is the null setter for:<BR>
 /**
 This is the hasChanged for:<BR>
 <TABLE border="0px" cellpadding="3px" cellspacing="0px">
-  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer      ></TD></TR>
+  <TR><TD align="right"><B>Name</B></TD><TD>tilda.data.TILDA.TESTING.a7b of type List<Integer></TD></TR>
   <TR><TD align="right"><B>Column</B></TD><TD>TILDA.TESTING.a7b of type integer[]</TD></TR>
 
   <TR><TD align="right"><B>Nullable</B></TD><TD>true</TD></TR>
@@ -4169,7 +4177,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public byte[] _a8;
+   byte[] _a8;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4208,7 +4216,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA8()
+   public final boolean isNullA8()
      { return (TILDA__TESTING_Factory.COLS.A8._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4309,7 +4317,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-    String _a9TZ;
+   String _a9TZ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4350,7 +4358,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA9TZ()
+   public final boolean isNullA9TZ()
      { return (TILDA__TESTING_Factory.COLS.A9TZ._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4462,7 +4470,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public ZonedDateTime _a9;
+   ZonedDateTime _a9;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4501,7 +4509,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullA9()
+   public final boolean isNullA9()
      { return (TILDA__TESTING_Factory.COLS.A9._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4679,14 +4687,14 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
 </TABLE>
 */
-    ZonedDateTime _created;
+   ZonedDateTime _created;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4705,8 +4713,8 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4732,8 +4740,8 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4772,8 +4780,8 @@ This is the NOW setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4801,8 +4809,8 @@ This is the UNDEFINED setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4830,8 +4838,8 @@ This is the explicit setter %%CALENDAR_SETTER%% for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4859,8 +4867,8 @@ This is the hasChanged for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Creation</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Creation&nbsp;&nbsp;</TD><TD>CREATE&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Creation time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4892,14 +4900,14 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
 </TABLE>
 */
-    ZonedDateTime _lastUpdated;
+   ZonedDateTime _lastUpdated;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4918,8 +4926,8 @@ This is the getter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4945,8 +4953,8 @@ This is the setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -4983,8 +4991,8 @@ This is the NOW setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -5012,8 +5020,8 @@ This is the UNDEFINED setter for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -5041,8 +5049,8 @@ This is the explicit setter %%CALENDAR_SETTER%% for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -5070,8 +5078,8 @@ This is the hasChanged for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
   <TR valign="top"><TD align="right"><B>Values</B></TD><TD>
 
-<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Description</TH></TR>
-  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
+<TABLE border="0px" cellpadding="2px" cellspacing="0px">   <TR align="left"><TH>&nbsp;</TH><TH align="right">Name&nbsp;&nbsp;</TH><TH>Value&nbsp;&nbsp;</TH><TH>Label&nbsp;&nbsp;</TH><TH>Default&nbsp;&nbsp;</TH><TH>Groupings&nbsp;&nbsp;</TH><TH>Description</TH></TR>
+  <TR bgcolor="#FFFFFF"><TD>0&nbsp;&nbsp;</TD><TD align="right"><B>Update</B>&nbsp;&nbsp;</TD><TD>NOW&nbsp;&nbsp;</TD><TD>Update&nbsp;&nbsp;</TD><TD>ALWAYS&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>Last updated time</TD></TR>
 </TABLE>
 </TD></TR>
 
@@ -5103,7 +5111,7 @@ This is the definition for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-    ZonedDateTime _deleted;
+   ZonedDateTime _deleted;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5142,7 +5150,7 @@ This is the isNull for:<BR>
   <TR><TD align="right"><B>Protect</B></TD><TD>NONE</TD></TR>
 </TABLE>
 */
-   public boolean isNullDeleted()
+   public final boolean isNullDeleted()
      { return (TILDA__TESTING_Factory.COLS.DELETED._Mask & __Nulls) != 0L; }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5301,7 +5309,7 @@ This is the hasChanged for:<BR>
  Copies all the field which are not part of the primary key, not are CALCULATED and not invariant, from the 
  current object to the destination. 
 */
-   public void CopyTo(tilda.data._tilda.TILDA__TESTING Dst) throws Exception
+   public void CopyTo(tilda.data._Tilda.TILDA__TESTING Dst) throws Exception
      {
        Dst.setName       (_name       );
        if ((TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask & __Nulls) != 0L) Dst.setNullDescription(); else        Dst.setDescription(_description);
@@ -5353,7 +5361,7 @@ This is the hasChanged for:<BR>
        if (__Changes == 0L)
         {
           LOG.debug("The tilda.data.TILDA.TESTING has not changed: no writing will occur.");
-          QueryDetails.setLastQuery(TILDA__TESTING_Factory.TABLENAME, "");
+          QueryDetails.setLastQuery(TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, "");
           return true;
         }
 
@@ -5362,60 +5370,61 @@ This is the hasChanged for:<BR>
        if (BeforeWrite(C) == false)
         {
           LOG.debug("The tilda.data.TILDA.TESTING object's BeforeWrite() failed.");
-          QueryDetails.setLastQuery(TILDA__TESTING_Factory.TABLENAME, "");
+          QueryDetails.setLastQuery(TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, "");
           return false;
         }
 
        if (__Init == InitMode.CREATE)
         {
           StringBuilder V = new StringBuilder(1024);
-          S.append("insert into TILDA.TESTING ");
-          if ((TILDA__TESTING_Factory.COLS.REFNUM._Mask      & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.REFNUM._Insert     ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.REFNUM2._Insert    ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.NAME._Mask        & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.NAME._Insert       ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DESCRIPTION._Insert); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.DESC2._Mask       & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DESC2._Insert      ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.DESC3._Mask       & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DESC3._Insert      ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.DESC4._Mask       & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DESC4._Insert      ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.DESC5._Mask       & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DESC5._Insert      ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.DESC6._Mask       & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DESC6._Insert      ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.TOPS._Insert       ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.TOPS2._Insert      ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A1._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A1._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A2._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A2._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A2B._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A2C._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A3._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A3._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A3B._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A4._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A4._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A4B._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A5._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A5._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A5B._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A6._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A6._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A6B._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A6C._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A7._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A7._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A7B._Insert        ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A8._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A8._Insert         ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
-          if ((TILDA__TESTING_Factory.COLS.A9TZ._Mask        & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A9TZ._Insert       ); V.append(tilda.data._tilda.TILDA__1_0._COMMAQUESTION);  }
+          S.append("insert into "); C.getFullTableVar(S, "TILDA", "TESTING");
+          int Pos = S.length();
+          if ((TILDA__TESTING_Factory.COLS.REFNUM._Mask      & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.REFNUM.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.REFNUM2.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.NAME._Mask        & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.NAME.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DESCRIPTION.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.DESC2._Mask       & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DESC2.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.DESC3._Mask       & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DESC3.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.DESC4._Mask       & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DESC4.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.DESC5._Mask       & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DESC5.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.DESC6._Mask       & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DESC6.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.TOPS.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.TOPS2.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A1._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A1.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A2._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A2.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A2B.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A2C.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A3._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A3.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A3B.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A4._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A4.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A4B.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A5._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A5.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A5B.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A6._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A6.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A6B.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A6C.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A7._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A7.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A7B.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A8._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A8.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
+          if ((TILDA__TESTING_Factory.COLS.A9TZ._Mask        & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A9TZ.getFullColumnVarForInsert(C, S); V.append(tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);  }
 
-          if ((TILDA__TESTING_Factory.COLS.A9._Mask          & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.A9._Insert         );
-             V.append((TILDA__TESTING_Factory.COLS.A9._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_a9) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
-           }
-
-          if ((TILDA__TESTING_Factory.COLS.CREATED._Mask     & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.CREATED._Insert    );
-             V.append((TILDA__TESTING_Factory.COLS.CREATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_created) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
-           }
-          else { S.append(TILDA__TESTING_Factory.COLS.CREATED._Insert); V.append(tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP); }
-          if ((TILDA__TESTING_Factory.COLS.LASTUPDATED._Mask & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.LASTUPDATED._Insert);
-             V.append((TILDA__TESTING_Factory.COLS.LASTUPDATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_lastUpdated) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
-           }
-          else { S.append(TILDA__TESTING_Factory.COLS.LASTUPDATED._Insert); V.append(tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP); }
-          if ((TILDA__TESTING_Factory.COLS.DELETED._Mask     & __Changes) != 0L) { S.append(TILDA__TESTING_Factory.COLS.DELETED._Insert    );
-             V.append((TILDA__TESTING_Factory.COLS.DELETED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deleted) == true ? tilda.data._tilda.TILDA__1_0._COMMACURRENTTIMESTAMP : tilda.data._tilda.TILDA__1_0._COMMAQUESTION);
+          if ((TILDA__TESTING_Factory.COLS.A9._Mask          & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.A9.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__TESTING_Factory.COLS.A9._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_a9) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
            }
 
-          S.setCharAt(26, '(');
+          if ((TILDA__TESTING_Factory.COLS.CREATED._Mask     & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.CREATED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__TESTING_Factory.COLS.CREATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_created) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
+           }
+          else { TILDA__TESTING_Factory.COLS.CREATED.getFullColumnVarForInsert(C, S); V.append(C.getCommaCurrentTimestamp()); }
+          if ((TILDA__TESTING_Factory.COLS.LASTUPDATED._Mask & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__TESTING_Factory.COLS.LASTUPDATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_lastUpdated) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
+           }
+          else { TILDA__TESTING_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S); V.append(C.getCommaCurrentTimestamp()); }
+          if ((TILDA__TESTING_Factory.COLS.DELETED._Mask     & __Changes) != 0L) { TILDA__TESTING_Factory.COLS.DELETED.getFullColumnVarForInsert(C, S);
+             V.append((TILDA__TESTING_Factory.COLS.DELETED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deleted) == true ? C.getCommaCurrentTimestamp() : tilda.data._Tilda.TILDA__1_0._COMMAQUESTION);
+           }
+
+          S.setCharAt(Pos, '(');
           V.setCharAt(0, '(');
           S.append(") values ").append(V).append(')');
           V.setLength(0);
@@ -5423,89 +5432,90 @@ This is the hasChanged for:<BR>
         }
        else // InitMode can be anything else
         {
-          S.append("update TILDA.TESTING set");
-          if ((TILDA__TESTING_Factory.COLS.REFNUM._Mask      & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.REFNUM._Update     );
-          if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.REFNUM2._Update    );
-          if ((TILDA__TESTING_Factory.COLS.NAME._Mask        & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.NAME._Update       );
-          if ((TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.DESCRIPTION._Update);
-          if ((TILDA__TESTING_Factory.COLS.DESC2._Mask       & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.DESC2._Update      );
-          if ((TILDA__TESTING_Factory.COLS.DESC3._Mask       & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.DESC3._Update      );
-          if ((TILDA__TESTING_Factory.COLS.DESC4._Mask       & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.DESC4._Update      );
-          if ((TILDA__TESTING_Factory.COLS.DESC5._Mask       & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.DESC5._Update      );
-          if ((TILDA__TESTING_Factory.COLS.DESC6._Mask       & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.DESC6._Update      );
-          if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.TOPS._Update       );
-          if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.TOPS2._Update      );
-          if ((TILDA__TESTING_Factory.COLS.A1._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A1._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A2._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A2._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A2B._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A2C._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A3._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A3._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A3B._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A4._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A4._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A4B._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A5._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A5._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A5B._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A6._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A6._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A6B._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A6C._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A7._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A7._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A7B._Update        );
-          if ((TILDA__TESTING_Factory.COLS.A8._Mask          & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A8._Update         );
-          if ((TILDA__TESTING_Factory.COLS.A9TZ._Mask        & __Changes) != 0L) S.append(TILDA__TESTING_Factory.COLS.A9TZ._Update       );
+          S.append("update "); C.getFullTableVar(S, "TILDA", "TESTING"); S.append(" set");
+          int Pos = S.length();
+          if ((TILDA__TESTING_Factory.COLS.REFNUM._Mask      & __Changes) != 0L) TILDA__TESTING_Factory.COLS.REFNUM.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Changes) != 0L) TILDA__TESTING_Factory.COLS.REFNUM2.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.NAME._Mask        & __Changes) != 0L) TILDA__TESTING_Factory.COLS.NAME.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask & __Changes) != 0L) TILDA__TESTING_Factory.COLS.DESCRIPTION.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.DESC2._Mask       & __Changes) != 0L) TILDA__TESTING_Factory.COLS.DESC2.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.DESC3._Mask       & __Changes) != 0L) TILDA__TESTING_Factory.COLS.DESC3.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.DESC4._Mask       & __Changes) != 0L) TILDA__TESTING_Factory.COLS.DESC4.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.DESC5._Mask       & __Changes) != 0L) TILDA__TESTING_Factory.COLS.DESC5.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.DESC6._Mask       & __Changes) != 0L) TILDA__TESTING_Factory.COLS.DESC6.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Changes) != 0L) TILDA__TESTING_Factory.COLS.TOPS.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Changes) != 0L) TILDA__TESTING_Factory.COLS.TOPS2.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A1._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A1.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A2._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A2.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A2B.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A2C.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A3._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A3.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A3B.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A4._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A4.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A4B.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A5._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A5.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A5B.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A6._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A6.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A6B.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A6C.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A7._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A7.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A7B.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A8._Mask          & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A8.getFullColumnVarForUpdate(C, S);
+          if ((TILDA__TESTING_Factory.COLS.A9TZ._Mask        & __Changes) != 0L) TILDA__TESTING_Factory.COLS.A9TZ.getFullColumnVarForUpdate(C, S);
 
           if ((TILDA__TESTING_Factory.COLS.A9._Mask & __Changes) != 0L)
            {
              if ((TILDA__TESTING_Factory.COLS.A9._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_a9) == true)
-              S.append(TILDA__TESTING_Factory.COLS.A9._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__TESTING_Factory.COLS.A9.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__TESTING_Factory.COLS.A9._Update);
+              TILDA__TESTING_Factory.COLS.A9.getFullColumnVarForUpdate(C, S);
            }
 
           if ((TILDA__TESTING_Factory.COLS.CREATED._Mask & __Changes) != 0L)
            {
              if ((TILDA__TESTING_Factory.COLS.CREATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_created) == true)
-              S.append(TILDA__TESTING_Factory.COLS.CREATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__TESTING_Factory.COLS.CREATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__TESTING_Factory.COLS.CREATED._Update);
+              TILDA__TESTING_Factory.COLS.CREATED.getFullColumnVarForUpdate(C, S);
            }
 
           if ((TILDA__TESTING_Factory.COLS.LASTUPDATED._Mask & __Changes) != 0L)
            {
              if ((TILDA__TESTING_Factory.COLS.LASTUPDATED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_lastUpdated) == true)
-              S.append(TILDA__TESTING_Factory.COLS.LASTUPDATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__TESTING_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__TESTING_Factory.COLS.LASTUPDATED._Update);
+              TILDA__TESTING_Factory.COLS.LASTUPDATED.getFullColumnVarForUpdate(C, S);
            }
           else 
            {
-             S.append(TILDA__TESTING_Factory.COLS.LASTUPDATED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+             TILDA__TESTING_Factory.COLS.LASTUPDATED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp());
              setLastUpdatedNow();
            }
 
           if ((TILDA__TESTING_Factory.COLS.DELETED._Mask & __Changes) != 0L)
            {
              if ((TILDA__TESTING_Factory.COLS.DELETED._Mask & __Nulls) == 0L && DateTimeUtil.isNowPlaceholder(_deleted) == true)
-              S.append(TILDA__TESTING_Factory.COLS.DELETED._Insert).append(tilda.data._tilda.TILDA__1_0._EQUALCURRENTTIMESTAMP);
+              { TILDA__TESTING_Factory.COLS.DELETED.getFullColumnVarForInsert(C, S); S.append(C.getEqualCurrentTimestamp()); }
              else
-              S.append(TILDA__TESTING_Factory.COLS.DELETED._Update);
+              TILDA__TESTING_Factory.COLS.DELETED.getFullColumnVarForUpdate(C, S);
            }
 
           switch (__LookupId)
            {
              case 0:
-                S.append(" where (TILDA.TESTING.\"refnum\"=?)");
+                S.append(" where ("); C.getFullColumnVar(S, "TILDA", "TESTING", "refnum"); S.append("=?)");
                 break;
              case -666: if (__Init == InitMode.CREATE) break;
              default: throw new Exception("Invalid LookupId "+__LookupId+" found. Cannot create where clause.");
            }
-          S.setCharAt(24, ' ');
+          S.setCharAt(Pos, ' ');
         }
 
        String Q = S.toString();
        S.setLength(0);
        S = null;
-       QueryDetails.setLastQuery(TILDA__TESTING_Factory.TABLENAME, Q);
-       LOG.debug("TILDA([7mTILDA.TESTING[27m): "+Q.replaceAll(TILDA__TESTING_Factory.TABLENAME+"\\.",""));
+       QueryDetails.setLastQuery(TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, Q);
+       LOG.debug("TILDA([7mTILDA.TESTING[27m): "+Q);
        LOG.debug("   "+toString());
        java.sql.PreparedStatement PS = null;
        int count = 0;
@@ -5520,7 +5530,7 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BIGINT ); else { java.sql.Array A = C.createArrayOf("bigint", CollectionUtil.toObjectArray(_refnum2)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.REFNUM2._Mask     & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BIGINT ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.REFNUM2._Type, AllocatedArrays, _refnum2);
                 } 
                if ((TILDA__TESTING_Factory.COLS.NAME._Mask        & __Changes) != 0L) 
                 { 
@@ -5552,11 +5562,11 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else { java.sql.Array A = C.createArrayOf("text", (_tops)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.TOPS._Mask        & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.TOPS._Type, AllocatedArrays, _tops);
                 } 
                if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else { java.sql.Array A = C.createArrayOf("text", (_tops2)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.TOPS2._Mask       & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.TOPS2._Type, AllocatedArrays, _tops2);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A1._Mask          & __Changes) != 0L) 
                 { 
@@ -5568,11 +5578,11 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else { java.sql.Array A = C.createArrayOf("character", CollectionUtil.toObjectArray(_a2b)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A2B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A2B._Type, AllocatedArrays, _a2b);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else { java.sql.Array A = C.createArrayOf("character", CollectionUtil.toObjectArray(_a2c)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A2C._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.CHAR   ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A2C._Type, AllocatedArrays, _a2c);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A3._Mask          & __Changes) != 0L) 
                 { 
@@ -5580,7 +5590,7 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BOOLEAN); else { java.sql.Array A = C.createArrayOf("boolean", CollectionUtil.toObjectArray(_a3b)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A3B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BOOLEAN); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A3B._Type, AllocatedArrays, _a3b);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A4._Mask          & __Changes) != 0L) 
                 { 
@@ -5588,7 +5598,7 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.DOUBLE ); else { java.sql.Array A = C.createArrayOf("double precision", CollectionUtil.toObjectArray(_a4b)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A4B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.DOUBLE ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A4B._Type, AllocatedArrays, _a4b);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A5._Mask          & __Changes) != 0L) 
                 { 
@@ -5596,7 +5606,7 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.FLOAT  ); else { java.sql.Array A = C.createArrayOf("real", CollectionUtil.toObjectArray(_a5b)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A5B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.FLOAT  ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A5B._Type, AllocatedArrays, _a5b);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A6._Mask          & __Changes) != 0L) 
                 { 
@@ -5604,11 +5614,11 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BIGINT ); else { java.sql.Array A = C.createArrayOf("bigint", CollectionUtil.toObjectArray(_a6b)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A6B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BIGINT ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A6B._Type, AllocatedArrays, _a6b);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BIGINT ); else { java.sql.Array A = C.createArrayOf("bigint", CollectionUtil.toObjectArray(_a6c)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A6C._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.BIGINT ); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A6C._Type, AllocatedArrays, _a6c);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A7._Mask          & __Changes) != 0L) 
                 { 
@@ -5616,7 +5626,7 @@ This is the hasChanged for:<BR>
                 } 
                if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Changes) != 0L) 
                 { 
-                  if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.INTEGER); else { java.sql.Array A = C.createArrayOf("integer", CollectionUtil.toObjectArray(_a7b)); AllocatedArrays.add(A); PS.setArray(++i, A); }
+                  if ((TILDA__TESTING_Factory.COLS.A7B._Mask         & __Nulls  ) != 0L) PS.setNull(++i, java.sql.Types.INTEGER); else C.setArray(PS, ++i, TILDA__TESTING_Factory.COLS.A7B._Type, AllocatedArrays, _a7b);
                 } 
                if ((TILDA__TESTING_Factory.COLS.A8._Mask          & __Changes) != 0L) 
                 { 
@@ -5661,11 +5671,11 @@ This is the hasChanged for:<BR>
        catch (java.sql.SQLException E)
         {
           C.releaseSavepoint(false);
-          return tilda.data._tilda.TILDA__1_0.HandleCatch(C, E, "updated or inserted");
+          return tilda.data._Tilda.TILDA__1_0.HandleCatch(C, E, "updated or inserted");
         }
        finally
         {
-          tilda.data._tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__TESTING_Factory.TABLENAME, __Init == InitMode.CREATE ? StatementType.INSERT : StatementType.UPDATE, count, AllocatedArrays);
+          tilda.data._Tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, __Init == InitMode.CREATE ? StatementType.INSERT : StatementType.UPDATE, count, AllocatedArrays);
           PS = null;
           AllocatedArrays = null;
         }
@@ -5720,15 +5730,48 @@ This is the hasChanged for:<BR>
        if (__Init == InitMode.READ == true && Force == false && __Changes == 0L)
         {
           LOG.debug("This TILDA.TESTING object has already been read.");
-          QueryDetails.setLastQuery(TILDA__TESTING_Factory.TABLENAME, "");
+          QueryDetails.setLastQuery(TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, "");
           return true;
         }
        StringBuilder S = new StringBuilder(1024);
-       S.append("select TILDA.TESTING.\"refnum\", TILDA.TESTING.\"refnum2\", TILDA.TESTING.\"name\", TILDA.TESTING.\"description\", TILDA.TESTING.\"desc2\", TILDA.TESTING.\"desc3\", TILDA.TESTING.\"desc4\", TILDA.TESTING.\"desc5\", TILDA.TESTING.\"desc6\", TILDA.TESTING.\"tops\", TILDA.TESTING.\"tops2\", TILDA.TESTING.\"a1\", TILDA.TESTING.\"a2\", TILDA.TESTING.\"a2b\", TILDA.TESTING.\"a2c\", TILDA.TESTING.\"a3\", TILDA.TESTING.\"a3b\", TILDA.TESTING.\"a4\", TILDA.TESTING.\"a4b\", TILDA.TESTING.\"a5\", TILDA.TESTING.\"a5b\", TILDA.TESTING.\"a6\", TILDA.TESTING.\"a6b\", TILDA.TESTING.\"a6c\", TILDA.TESTING.\"a7\", TILDA.TESTING.\"a7b\", TILDA.TESTING.\"a8\", TILDA.TESTING.\"a9TZ\", TILDA.TESTING.\"a9\", TILDA.TESTING.\"created\", TILDA.TESTING.\"lastUpdated\", TILDA.TESTING.\"deleted\" from TILDA.TESTING");
+       S.append("select ");
+       S.append(" "); C.getFullColumnVar(S, "TILDA", "TESTING", "refnum");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "refnum2");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "name");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "description");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "desc2");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "desc3");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "desc4");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "desc5");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "desc6");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "tops");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "tops2");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a1");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a2");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a2b");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a2c");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a3");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a3b");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a4");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a4b");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a5");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a5b");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a6");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a6b");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a6c");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a7");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a7b");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a8");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a9TZ");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "a9");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "created");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "lastUpdated");
+       S.append(", "); C.getFullColumnVar(S, "TILDA", "TESTING", "deleted");
+       S.append(" from "); C.getFullTableVar(S, "TILDA", "TESTING");
        switch (__LookupId)
         {
           case 0:
-             S.append(" where (TILDA.TESTING.\"refnum\"=?)");
+             S.append(" where ("); C.getFullColumnVar(S, "TILDA", "TESTING", "refnum"); S.append("=?)");
              break;
           case -666: if (__Init == InitMode.CREATE) break;
           default: throw new Exception("Invalid LookupId "+__LookupId+" found. Cannot create where clause.");
@@ -5737,8 +5780,8 @@ This is the hasChanged for:<BR>
        String Q = S.toString();
        S.setLength(0);
        S = null;
-       QueryDetails.setLastQuery(TILDA__TESTING_Factory.TABLENAME, Q);
-       LOG.debug("TILDA([7mTILDA.TESTING[27m): "+Q.replaceAll(TILDA__TESTING_Factory.TABLENAME+"\\.",""));
+       QueryDetails.setLastQuery(TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, Q);
+       LOG.debug("TILDA([7mTILDA.TESTING[27m): "+Q);
        LOG.debug("   "+toString());
        java.sql.PreparedStatement PS=null;
        java.sql.ResultSet RS=null;
@@ -5769,26 +5812,26 @@ This is the hasChanged for:<BR>
         }
        catch (java.sql.SQLException E)
         {
-          return tilda.data._tilda.TILDA__1_0.HandleCatch(C, E, "selected");
+          return tilda.data._Tilda.TILDA__1_0.HandleCatch(C, E, "selected");
         }
        finally
         {
-          tilda.data._tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__TESTING_Factory.TABLENAME, StatementType.SELECT, count, AllocatedArrays);
+          tilda.data._Tilda.TILDA__1_0.HandleFinally(PS, T0, TILDA__TESTING_Factory.SCHEMA_TABLENAME_LABEL, StatementType.SELECT, count, AllocatedArrays);
           PS = null;
           AllocatedArrays = null;
         }
     }
 
+   @SuppressWarnings("unchecked")
    boolean Init(Connection C, java.sql.ResultSet RS) throws Exception
     {
       int i = 0;
-      java.sql.Array A;
       tilda.data.ZoneInfo_Data ZI;
       boolean DateTimeFieldNull;
       boolean ZoneFieldNull;
      __Init = InitMode.LOOKUP;
       __Saved_refnum      = _refnum      =                              RS.getLong     (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.REFNUM._Mask     ;
-                            A = RS.getArray(++i); _refnum2     = A==null?null:CollectionUtil.toList((Long         [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.REFNUM2._Mask    ;
+                            _refnum2 = (List<Long>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.REFNUM2._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.REFNUM2._Mask    ;
                             _name        =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.NAME._Mask       ; else _name        = _name       .trim();
                             _description =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.DESCRIPTION._Mask;
                             _desc2       =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.DESC2._Mask      ;
@@ -5796,23 +5839,23 @@ This is the hasChanged for:<BR>
                             _desc4       =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.DESC4._Mask      ;
                             _desc5       =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.DESC5._Mask      ;
                             _desc6       =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.DESC6._Mask      ;
-                            A = RS.getArray(++i); _tops        = A==null?null:CollectionUtil.toList((String       [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.TOPS._Mask       ;
-                            A = RS.getArray(++i); _tops2       = A==null?null:CollectionUtil.toSet ((String       [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.TOPS2._Mask      ;
+                            _tops = (List<String>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.TOPS._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.TOPS._Mask       ;
+                            _tops2 = (Set<String>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.TOPS2._Type, true); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.TOPS2._Mask      ;
                             _a1          =                              RS.getInt      (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A1._Mask         ;
                             _a2          = ParseUtil.parseCharacter    (RS.getString   (++i));  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A2._Mask         ;
-                            A = RS.getArray(++i); _a2b         = A==null?null:CollectionUtil.toList((Character    [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A2B._Mask        ;
-                            A = RS.getArray(++i); _a2c         = A==null?null:CollectionUtil.toSet ((Character    [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A2C._Mask        ;
+                            _a2b = (List<Character>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A2B._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A2B._Mask        ;
+                            _a2c = (Set<Character>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A2C._Type, true); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A2C._Mask        ;
                             _a3          =                              RS.getBoolean  (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A3._Mask         ;
-                            A = RS.getArray(++i); _a3b         = A==null?null:CollectionUtil.toList((Boolean      [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A3B._Mask        ;
+                            _a3b = (List<Boolean>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A3B._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A3B._Mask        ;
                             _a4          =                              RS.getDouble   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A4._Mask         ;
-                            A = RS.getArray(++i); _a4b         = A==null?null:CollectionUtil.toList((Double       [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A4B._Mask        ;
+                            _a4b = (List<Double>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A4B._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A4B._Mask        ;
                             _a5          =                              RS.getFloat    (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A5._Mask         ;
-                            A = RS.getArray(++i); _a5b         = A==null?null:CollectionUtil.toList((Float        [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A5B._Mask        ;
+                            _a5b = (List<Float>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A5B._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A5B._Mask        ;
                             _a6          =                              RS.getLong     (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A6._Mask         ;
-                            A = RS.getArray(++i); _a6b         = A==null?null:CollectionUtil.toList((Long         [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A6B._Mask        ;
-                            A = RS.getArray(++i); _a6c         = A==null?null:CollectionUtil.toSet ((Long         [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A6C._Mask        ;
+                            _a6b = (List<Long>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A6B._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A6B._Mask        ;
+                            _a6c = (Set<Long>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A6C._Type, true); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A6C._Mask        ;
                             _a7          =                              RS.getInt      (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A7._Mask         ;
-                            A = RS.getArray(++i); _a7b         = A==null?null:CollectionUtil.toList((Integer      [])A.getArray()); if (A != null) A.free(); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A7B._Mask        ;
+                            _a7b = (List<Integer>) C.getArray(RS, ++i, TILDA__TESTING_Factory.COLS.A7B._Type, false); if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A7B._Mask        ;
                             _a8          =                              RS.getBytes    (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A8._Mask         ;
                             _a9TZ        =                              RS.getString   (++i) ;  if (RS.wasNull() == true) __Nulls |= TILDA__TESTING_Factory.COLS.A9TZ._Mask       ; else _a9TZ        = _a9TZ       .trim();
                             _a9          = ProcessZDT(_a9TZ         , "tilda.data.TILDA.TESTING.a9"         , RS, ++i, TILDA__TESTING_Factory.COLS.A9         , TILDA__TESTING_Factory.COLS.A9TZ         );
@@ -5836,8 +5879,8 @@ This is the hasChanged for:<BR>
       __Nulls |= DTField._Mask;
      boolean DTNull = (__Nulls & DTField._Mask) != 0L;
      boolean TZNull = (__Nulls & TZField._Mask) != 0L;
-     if (DTNull != TZNull)
-      throw new Exception("The field "+DTFieldName+" (null=" + DTNull + ") is inconsistent with its associated field '"+DTFieldName+"TZ' (null=" + TZNull + "). They both should be null or not null.");
+     if (DTNull == false && TZNull == true)
+      throw new Exception("The field "+DTFieldName+" is not null while its associated timezone field '"+DTFieldName+"TZ' is null. A TZ is mandatory for not null timestamps.");
      return ZDT;
    }
 

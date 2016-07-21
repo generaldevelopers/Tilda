@@ -111,12 +111,15 @@ public class TextUtil
       {
         EscapeSingleQuoteForSQL(X, S, "'", "'");
       }
+    
 
     public static final void EscapeSingleQuoteForSQL(StringBuilder X, String[] S, boolean First)
       {
         if (S != null)
           for (String s : S)
             {
+              if (s==null)
+               continue;
               if (First == true)
                 First = false;
               else
@@ -125,16 +128,18 @@ public class TextUtil
             }
       }
 
-    public static final void EscapeSingleQuoteForSQL(StringBuilder X, Collection<String> Strs, boolean First)
+    public static final <T> void EscapeSingleQuoteForSQL(StringBuilder X, Collection<T> Strs, boolean First)
       {
         if (Strs != null)
-          for (String s : Strs)
+          for (T s : Strs)
             {
+              if (s==null)
+               continue;
               if (First == true)
                 First = false;
               else
                 X.append(", ");
-              EscapeSingleQuoteForSQL(X, s);
+              EscapeSingleQuoteForSQL(X, s.toString());
             }
       }
 
@@ -875,12 +880,6 @@ public class TextUtil
       }
 
 
-    /** Truncates the string and adds "..." if it is bigger than MaxLen */
-    public static final String toMaxLength(String Str, int MaxLen)
-      {
-        return Str.length() <= MaxLen ? Str : Str.substring(0, MaxLen - 3) + "...";
-      }
-
     public static final void EscapeXML(PrintWriter Out, String Str)
       {
         for (int i = 0; i < Str.length(); ++i)
@@ -1483,9 +1482,21 @@ public class TextUtil
         return count%2 == 0;
       }
     
+    /** Truncates the string and adds "..." if it is bigger than MaxLen */
+    public static final String toMaxLength(String Str, int MaxLen)
+      {
+        return Str == null || Str.length() <= MaxLen ? Str : Str.substring(0, MaxLen - 3) + "...";
+      }
+
     public static final String PrintVariableStr(String Value)
      {
-       return "("+ (Value == null ? 0 : Value.length())+"): "+(Value == null || Value.length() < 100 ? Value : Value.substring(0, 100)+"...");      
+       return PrintVariableStr(Value, 100);      
      }
+    
+    public static final String PrintVariableStr(String Value, int MaxLen)
+     {
+       return "["+ (Value == null ? 0 : Value.length())+"] "+toMaxLength(Value, MaxLen);      
+     }
+    
 
   }

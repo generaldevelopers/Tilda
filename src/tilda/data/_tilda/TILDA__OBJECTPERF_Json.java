@@ -1,5 +1,5 @@
 
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -17,7 +17,7 @@ import tilda.utils.*;
 
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
+@SuppressWarnings({ "unused" })
 public class TILDA__OBJECTPERF_Json
  {
    static final Logger             LOG                = LogManager.getLogger(TILDA__OBJECTPERF_Json.class.getName());
@@ -25,24 +25,24 @@ public class TILDA__OBJECTPERF_Json
    protected TILDA__OBJECTPERF_Json() { }
 
    /*@formatter:off*/
-   @SerializedName("schemaName"   ) public String         _schemaName   ;
-   @SerializedName("objectName"   ) public String         _objectName   ;
+   @SerializedName("schemaName"   ) public String  _schemaName   ;
+   @SerializedName("objectName"   ) public String  _objectName   ;
    @SerializedName("startPeriod"  ) public String  Str_startPeriod  ;
    transient                        public ZonedDateTime  _startPeriod  ;
    @SerializedName("endPeriod"    ) public String  Str_endPeriod    ;
    transient                        public ZonedDateTime  _endPeriod    ;
-   @SerializedName("selectNano"   ) public Long           _selectNano   ;
-   @SerializedName("selectCount"  ) public Long           _selectCount  ;
-   @SerializedName("selectRecords") public Long           _selectRecords;
-   @SerializedName("insertNano"   ) public Long           _insertNano   ;
-   @SerializedName("insertCount"  ) public Long           _insertCount  ;
-   @SerializedName("insertRecords") public Long           _insertRecords;
-   @SerializedName("updateNano"   ) public Long           _updateNano   ;
-   @SerializedName("updateCount"  ) public Long           _updateCount  ;
-   @SerializedName("updateRecords") public Long           _updateRecords;
-   @SerializedName("deleteNano"   ) public Long           _deleteNano   ;
-   @SerializedName("deleteCount"  ) public Long           _deleteCount  ;
-   @SerializedName("deleteRecords") public Long           _deleteRecords;
+   @SerializedName("selectNano"   ) public Long  _selectNano   ;
+   @SerializedName("selectCount"  ) public Long  _selectCount  ;
+   @SerializedName("selectRecords") public Long  _selectRecords;
+   @SerializedName("insertNano"   ) public Long  _insertNano   ;
+   @SerializedName("insertCount"  ) public Long  _insertCount  ;
+   @SerializedName("insertRecords") public Long  _insertRecords;
+   @SerializedName("updateNano"   ) public Long  _updateNano   ;
+   @SerializedName("updateCount"  ) public Long  _updateCount  ;
+   @SerializedName("updateRecords") public Long  _updateRecords;
+   @SerializedName("deleteNano"   ) public Long  _deleteNano   ;
+   @SerializedName("deleteCount"  ) public Long  _deleteCount  ;
+   @SerializedName("deleteRecords") public Long  _deleteRecords;
    /*@formatter:on*/
 
    public tilda.data.ObjectPerf_Data Write(Connection C) throws Exception
@@ -87,8 +87,7 @@ public class TILDA__OBJECTPERF_Json
        throw new Exception("Incoming value for 'tilda.data.TILDA.OBJECTPERF.deleteRecords' was null or empty. It's not nullable in the model.\n"+toString());
 
       tilda.data.ObjectPerf_Data Obj = tilda.data.ObjectPerf_Factory.Create(_schemaName, _objectName, _startPeriod, _endPeriod, _selectNano, _selectCount, _selectRecords, _insertNano, _insertCount, _insertRecords, _updateNano, _updateCount, _updateRecords, _deleteNano, _deleteCount, _deleteRecords);
-
-
+      Update(Obj);
       if (Obj.Write(C) == false)
        {
          Obj = tilda.data.ObjectPerf_Factory.LookupByPrimaryKey(_schemaName, _objectName, _startPeriod);
@@ -113,6 +112,26 @@ public class TILDA__OBJECTPERF_Json
        }
       return Obj;
    }
+
+   public void Update(tilda.data.ObjectPerf_Data Obj) throws Exception
+    {
+      if (_schemaName   != null) Obj.setSchemaName   (_schemaName   );
+      if (_objectName   != null) Obj.setObjectName   (_objectName   );
+      if (_startPeriod  != null) Obj.setStartPeriod  (_startPeriod  );
+      if (_endPeriod    != null) Obj.setEndPeriod    (_endPeriod    );
+      if (_selectNano   != null) Obj.setSelectNano   (_selectNano   );
+      if (_selectCount  != null) Obj.setSelectCount  (_selectCount  );
+      if (_selectRecords!= null) Obj.setSelectRecords(_selectRecords);
+      if (_insertNano   != null) Obj.setInsertNano   (_insertNano   );
+      if (_insertCount  != null) Obj.setInsertCount  (_insertCount  );
+      if (_insertRecords!= null) Obj.setInsertRecords(_insertRecords);
+      if (_updateNano   != null) Obj.setUpdateNano   (_updateNano   );
+      if (_updateCount  != null) Obj.setUpdateCount  (_updateCount  );
+      if (_updateRecords!= null) Obj.setUpdateRecords(_updateRecords);
+      if (_deleteNano   != null) Obj.setDeleteNano   (_deleteNano   );
+      if (_deleteCount  != null) Obj.setDeleteCount  (_deleteCount  );
+      if (_deleteRecords!= null) Obj.setDeleteRecords(_deleteRecords);
+    }
 
    public String toString()
     {

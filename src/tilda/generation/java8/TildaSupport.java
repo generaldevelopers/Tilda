@@ -59,7 +59,6 @@ public class TildaSupport implements CodeGenTildaSupport
     public void genClassStart(PrintWriter Out, GeneratorSession G, Object O)
       throws Exception
       {
-        Out.println("@SuppressWarnings({ \"unchecked\", \"unused\", \"rawtypes\" })");
         Out.println("public final class TILDA__" + Generator.TILDA_VERSION_VAROK);
         Out.println(" {");
         Out.println("   protected static final Logger LOG = LogManager.getLogger(TILDA__" + Generator.TILDA_VERSION_VAROK + ".class.getName());");
@@ -69,8 +68,6 @@ public class TildaSupport implements CodeGenTildaSupport
       {
         Out.println("   protected static final String _COMMAQUESTION            =TextUtil.Identity(\",?\");");
         Out.println("   protected static final String _EQUALQUESTION            =TextUtil.Identity(\"=?\");");
-        Out.println("   protected static final String _COMMACURRENTTIMESTAMP    =TextUtil.Identity(\"" + G.getSql().getCommaCurentTimestamp() + "\");");
-        Out.println("   protected static final String _EQUALCURRENTTIMESTAMP    =TextUtil.Identity(\"" + G.getSql().getEqualCurentTimestamp() + "\");");
         Out.println();
         Out.println("   protected static boolean HandleCatch(Connection C, java.sql.SQLException E, String OperationDebugStr) throws java.sql.SQLException");
         Out.println("     {");
@@ -109,7 +106,8 @@ public class TildaSupport implements CodeGenTildaSupport
         Out.println("   public static void initSchema(Connection C) throws Exception");
         Out.println("    {");
         for (Object O : S._Objects)
-          Out.println("      " + Helper.getFullBaseClassName(O) + "_Factory.initObject(C);");
+          if (O != null)
+           Out.println("      " + Helper.getFullBaseClassName(O) + "_Factory.initObject(C);");
         Out.println("    }");
       }
 

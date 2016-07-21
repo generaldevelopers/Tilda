@@ -33,15 +33,15 @@ import tilda.enums.StatementType;
  */
 public class SelectQuery extends QueryHelper
   {
-    public SelectQuery(Connection C, String TableName)
+    public SelectQuery(Connection C, String SchemaName, String TableName, boolean fullSelect)
       throws Exception
       {
-        super(C, StatementType.SELECT, TableName);
+        super(C, StatementType.SELECT, SchemaName, TableName, fullSelect);
       }
     
     public int execute(RecordProcessor RP, int Start, int Size)
       throws Exception
       {
-        return _C.ExecuteSelect(_TableName, _QueryStr.toString()+_C.getSelectLimitClause(Start, Size+1), RP, Start, _C.supportsSelectOffset(), Size, _C.supportsSelectLimit());
+        return _C.ExecuteSelect(_SchemaName, _TableName, _QueryStr.toString()+_C.getSelectLimitClause(Start, Size+1), RP, Start, _C.supportsSelectOffset(), Size, _C.supportsSelectLimit());
       }
   }

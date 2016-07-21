@@ -24,13 +24,13 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.gson.annotations.SerializedName;
+
 import tilda.enums.ObjectLifecycle;
 import tilda.parsing.ParserSession;
 import tilda.parsing.parts.helpers.ValidationHelper;
 import tilda.utils.PaddingTracker;
 import tilda.utils.TextUtil;
-
-import com.google.gson.annotations.SerializedName;
 
 public abstract class Base
   {
@@ -54,20 +54,33 @@ public abstract class Base
     public transient boolean              _Validated = false;
 
     public abstract Column getColumn(String name);
+    public abstract String[] getColumnNames();
     public abstract ObjectLifecycle getLifecycle();
     public abstract boolean isOCC();
     public abstract String getWhat();
 
+    /**
+     * 
+     * @return the FULL name of the schema (including the package name) + '.' + the name of the object.
+     */
     public String getFullName()
       {
         return _ParentSchema.getFullName() + "." + _Name;
       }
 
+    /**
+     * 
+     * @return simply the name of the schema + '.' + the name of the object.
+     */
     public String getShortName()
       {
         return _ParentSchema.getShortName() + "." + _Name;
       }
     
+    /**
+     * 
+     * @return simple the name of the object.
+     */
     public String getBaseName()
       {
         return _Name;

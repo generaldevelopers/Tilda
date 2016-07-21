@@ -1,5 +1,5 @@
 
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -17,7 +17,7 @@ import tilda.utils.*;
 
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
+@SuppressWarnings({ "unused" })
 public class TILDA__ZONEINFO_Json
  {
    static final Logger             LOG                = LogManager.getLogger(TILDA__ZONEINFO_Json.class.getName());
@@ -25,9 +25,9 @@ public class TILDA__ZONEINFO_Json
    protected TILDA__ZONEINFO_Json() { }
 
    /*@formatter:off*/
-   @SerializedName("id"           ) public String         _id           ;
-   @SerializedName("value"        ) public String         _value        ;
-   @SerializedName("label"        ) public String         _label        ;
+   @SerializedName("id"           ) public String  _id           ;
+   @SerializedName("value"        ) public String  _value        ;
+   @SerializedName("label"        ) public String  _label        ;
    /*@formatter:on*/
 
    public tilda.data.ZoneInfo_Data Write(Connection C) throws Exception
@@ -40,8 +40,7 @@ public class TILDA__ZONEINFO_Json
        throw new Exception("Incoming value for 'tilda.data.TILDA.ZONEINFO.label' was null or empty. It's not nullable in the model.\n"+toString());
 
       tilda.data.ZoneInfo_Data Obj = tilda.data.ZoneInfo_Factory.Create(_id, _value, _label);
-
-
+      Update(Obj);
       if (Obj.Write(C) == false)
        {
          Obj = tilda.data.ZoneInfo_Factory.LookupById(_id);
@@ -56,6 +55,13 @@ public class TILDA__ZONEINFO_Json
        }
       return Obj;
    }
+
+   public void Update(tilda.data.ZoneInfo_Data Obj) throws Exception
+    {
+      if (_id           != null) Obj.setId           (_id           );
+      if (_value        != null) Obj.setValue        (_value        );
+      if (_label        != null) Obj.setLabel        (_label        );
+    }
 
    public String toString()
     {

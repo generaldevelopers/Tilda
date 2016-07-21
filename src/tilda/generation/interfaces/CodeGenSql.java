@@ -20,6 +20,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import tilda.db.stores.DBType;
+import tilda.enums.ColumnType;
 import tilda.parsing.parts.Column;
 import tilda.parsing.parts.Index;
 import tilda.parsing.parts.Object;
@@ -31,10 +32,13 @@ public interface CodeGenSql extends DBType, CodeGenBase
     
     public String getFullTableVar(Object O);
     public String getFullColumnVar(Column C);
+    public String getFullColumnVar(Column C, int i);
+    public String getFullTableVar(Object O, int i);
     public String getShortColumnVar(Column C);
     
     public String getColumnType(Column C);
-    public String getColumnTypeRaw(Column C);
+    public String getColumnTypeRaw(Column C, boolean MultiOverride);
+    public String getColumnTypeRaw(ColumnType Type, int Size, boolean isArray);
     public boolean stringNeedsTrim(Column C);
     
     boolean supportsArrays();
@@ -43,8 +47,8 @@ public interface CodeGenSql extends DBType, CodeGenBase
     public String getEqualCurentTimestamp();
     public String getCommaCurentTimestamp();
 
-    public void genDDL(PrintWriter Out, Object O);
-    public void genDDL(PrintWriter Out, View   V);
+    public void genDDL(PrintWriter Out, Object O) throws Exception;
+    public void genDDL(PrintWriter Out, View   V) throws Exception;
     public void genIndex(PrintWriter Out, Index I);
     public void genKeysManagement(PrintWriter Out, Object O);
   }

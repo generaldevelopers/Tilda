@@ -23,8 +23,10 @@ import org.apache.logging.log4j.Logger;
 
 import tilda.generation.Generator;
 import tilda.generation.GeneratorSession;
-import tilda.parsing.ParserSession;
+import tilda.generation.Manifest;
+import tilda.generation.graphviz.GraphvizUtil;
 import tilda.parsing.Parser;
+import tilda.parsing.ParserSession;
 import tilda.parsing.parts.Schema;
 import tilda.utils.SystemValues;
 
@@ -37,7 +39,10 @@ public class Gen
         SystemValues.autoInit();
 
         if (Args.length == 0)
-          throw new Error("The utility must be called with a path to a Tilda json file");
+          {
+            LOG.error("The utility must be called with a path to a Tilda json file");
+            System.exit(-1);
+          }
 
         for (String path : Args)
           {
@@ -62,13 +67,15 @@ public class Gen
                           LOG.debug("    - " + I.next().getFullName() + ".");
                       }
                     Generator.generate(PS._Main, G);
+                    Manifest.update(PS);
+                    new GraphvizUtil(PS._Main, G).writeSchema();
                     LOG.info("Generated Tilda code for schema '" + PS._Main.getFullName() + "'.");
                   }
               }
             catch (Throwable T)
               {
                 LOG.error("Couldn't load the schema '" + path + "'.\n", T);
-                break;
+                System.exit(-1);
               }
           }
       }

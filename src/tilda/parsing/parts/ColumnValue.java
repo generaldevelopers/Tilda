@@ -33,6 +33,7 @@ public class ColumnValue
     @SerializedName("value"      ) public String      _Value;
     @SerializedName("label"      ) public String      _Label;
     @SerializedName("description") public String      _Description;
+    @SerializedName("groupings"  ) public String[]    _Groupings;
     @SerializedName("default"    ) public DefaultType _Default = DefaultType.NONE;
 //    @SerializedName("raw"        ) public boolean     _Raw     = false;
     /*@formatter:on*/
@@ -45,12 +46,13 @@ public class ColumnValue
       {
       }
 
-    private ColumnValue(String Name, String Value, String Label, String Description, DefaultType Default)
+    private ColumnValue(String Name, String Value, String Label, String Description, String[] Groupings, DefaultType Default)
       {
         _Name        = Name;
         _Value       = Value;
         _Label       = Label;
         _Description = Description;
+        _Groupings   = Groupings;
         _Default     = Default;
       }
 
@@ -84,11 +86,16 @@ public class ColumnValue
         if (TextUtil.isNullOrEmpty(_Value) == true)
           _Value = _Name;
 
+        if (TextUtil.isNullOrEmpty(_Description) == true)
+         {
+           if (TextUtil.isNullOrEmpty(_Label) == false)
+             _Description = _Label;
+           else
+             PS.AddError("Column '" + _ParentColumn.getFullName() + "' defines a Value without a 'description' or a 'label'.");
+         }
+
         if (TextUtil.isNullOrEmpty(_Label) == true)
           _Label = _Name;
-
-        if (TextUtil.isNullOrEmpty(_Description) == true)
-          PS.AddError("Column '" + _ParentColumn.getFullName() + "' defines a Value without a 'description'.");
 
         // if (_Raw == false)
         ValueHelper.CheckColumnValue(PS, _ParentColumn, _Name, _Value, _Default);
@@ -104,7 +111,7 @@ public class ColumnValue
             ColumnValue v = _Values[i];
             if (v != null)
              {
-               A[i] = new ColumnValue(v._Name, v._Value, v._Label, v._Description, v._Default);
+               A[i] = new ColumnValue(v._Name, v._Value, v._Label, v._Description, v._Groupings, v._Default);
              }
           }
         return A;

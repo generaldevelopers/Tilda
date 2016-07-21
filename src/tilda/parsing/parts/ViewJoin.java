@@ -19,6 +19,8 @@ package tilda.parsing.parts;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import tilda.db.stores.DBType;
+import tilda.enums.JoinType;
 import tilda.parsing.ParserSession;
 import tilda.parsing.parts.helpers.ReferenceHelper;
 import tilda.utils.TextUtil;
@@ -31,16 +33,18 @@ public class ViewJoin
 
     /*@formatter:off*/
 	@SerializedName("object"     ) public String  _Object ;
-	@SerializedName("on"         ) public String  _On     ;
+	@SerializedName("on"         ) public Query[] _Ons    ;
+    @SerializedName("joinType"   ) public String  _JoinStr;
     /*@formatter:on*/
 	
-    public transient Object       _ObjectObj;
     
     public ViewJoin()
      {
      }
 
     public transient View     _ParentView;
+    public transient Object   _ObjectObj;
+    public transient JoinType _Join;
     public transient boolean  _FailedValidation = false;
 
     
@@ -53,7 +57,7 @@ public class ViewJoin
         if (TextUtil.isNullOrEmpty(_Object) == true)
           return PS.AddError("View '" + ParentView.getFullName() + "' is defining a join without any 'object' specified.");
 
-        if (TextUtil.isNullOrEmpty(_On) == true)
+        if (_Ons == null || _Ons.length == 0)
           return PS.AddError("View '" + ParentView.getFullName() + "' is defining a join without any 'on' specified.");
 
         ReferenceHelper R = ReferenceHelper.parseObjectReference(_Object, ParentView._ParentSchema);
@@ -68,7 +72,16 @@ public class ViewJoin
              return PS.AddError("View '" + ParentView.getFullName() + "' declares a join '" + _Object + "' with Object '" + _Object + "' which has failed validation.");
           }
         
+        if (_JoinStr != null)
+          if ((_Join = JoinType.parse(_JoinStr)) == null)
+            return PS.AddError("Join on '" + _ObjectObj.getFullName() + "' defined an invalid 'joinType' '" + _JoinStr + "'.");
         
         return Errs == PS.getErrorCount();
       }
+    
+    public Query getQuery(DBType Db)
+      {
+        return Query.getQuery(_Ons, Db);
+      }
+    
   }

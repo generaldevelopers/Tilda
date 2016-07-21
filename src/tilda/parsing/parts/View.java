@@ -24,6 +24,8 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.gson.annotations.SerializedName;
+
 import tilda.enums.ColumnMapperMode;
 import tilda.enums.ColumnType;
 import tilda.enums.FrameworkSourcedType;
@@ -31,8 +33,6 @@ import tilda.enums.ObjectLifecycle;
 import tilda.parsing.ParserSession;
 import tilda.parsing.parts.helpers.SameAsHelper;
 import tilda.utils.TextUtil;
-
-import com.google.gson.annotations.SerializedName;
 
 public class View extends Base
   {
@@ -57,6 +57,14 @@ public class View extends Base
           if (C != null && C._Name != null && C._Name.equalsIgnoreCase(name) == true)
             return C._SameAsObj;
         return null;
+      }
+    @Override
+    public String[] getColumnNames()
+      {
+        String[] Cols = new String[_ViewColumns.size()];
+        for (int i = 0; i < _ViewColumns.size(); ++i)
+         Cols[i] = _ViewColumns.get(i)._Name;
+        return Cols;
       }
 
     @Override
@@ -107,6 +115,13 @@ public class View extends Base
         for (int i = 0; i < _ViewColumns.size(); ++i)
          {
            ViewColumn C = _ViewColumns.get(i);
+           // It's possible in JSON to have dangling commas, which GSON will read fine as a NULL object. So we need to protect against that.
+           if (C == null)
+            {
+              _ViewColumns.remove(i);
+              --i;
+              continue;
+            }
            C.Validate(PS, this);
            if (ColumnNames.add(C.getName().toUpperCase()) == false)
              PS.AddError("Column '" + C.getFullName() + "' is defined more than once in View '" + getFullName() + "'.");
@@ -173,7 +188,7 @@ public class View extends Base
                 
                 _SubQuery.Validate(PS, this, "View " + getFullName() + "'s "+(TextUtil.isNullOrEmpty(_SubWhere)==false?"subWhere":"subQuery"), false);
                 
-                if (_SubQuery._ColumnObjs.isEmpty() == false)
+                if (_SubQuery._Attributes.isEmpty() == false)
                  PS.AddError("View '" + getFullName() + "' is defining a subWhere with parameters: that is not allowed for views.");
               }
           }
@@ -197,7 +212,9 @@ public class View extends Base
           if (C != null && C._FrameworkGenerated == false && C._JoinOnly == false)
             {
               if (_OCC == false || C.getName().equals("created") == false && C.getName().equals("lastUpdated") == false && C.getName().equals("deleted") == false)
-               O._Columns.add(new ViewColumnWrapper(C._SameAsObj, C));
+                {
+                   O._Columns.add(new ViewColumnWrapper(C._SameAsObj, C));
+                }
             }
         _ParentSchema._Objects.add(O);
         O.Validate(PS, ParentSchema);

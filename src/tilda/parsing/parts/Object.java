@@ -24,13 +24,13 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.gson.annotations.SerializedName;
+
 import tilda.enums.ColumnMode;
 import tilda.enums.ColumnType;
 import tilda.enums.FrameworkSourcedType;
 import tilda.enums.ObjectLifecycle;
 import tilda.parsing.ParserSession;
-
-import com.google.gson.annotations.SerializedName;
 
 public class Object extends Base
   {
@@ -38,16 +38,18 @@ public class Object extends Base
     static final Logger              LOG                = LogManager.getLogger(Object.class.getName());
 
     /*@formatter:off*/
-    @SerializedName("occ"        ) public boolean              _OCC        = true ;
-    @SerializedName("lc"         ) public String               _LCStr      = ObjectLifecycle.NORMAL.toString();
+    @SerializedName("occ"           ) public boolean              _OCC        = true ;
+    @SerializedName("lc"            ) public String               _LCStr      = ObjectLifecycle.NORMAL.toString();
 
-    @SerializedName("columns"    ) public List<Column>         _Columns    = new ArrayList<Column        >();
+    @SerializedName("columns"       ) public List<Column>         _Columns    = new ArrayList<Column        >();
 
-    @SerializedName("primary"    ) public PrimaryKey           _PrimaryKey = null;
-    @SerializedName("foreign"    ) public List<ForeignKey>     _ForeignKeys= new ArrayList<ForeignKey>();
-    @SerializedName("indices"    ) public List<Index>          _Indices    = new ArrayList<Index         >();
-    @SerializedName("http"       ) public HttpMapping[]        _Http       = { };
-    @SerializedName("history"    ) public String     []        _History    = { };
+    @SerializedName("primary"       ) public PrimaryKey           _PrimaryKey = null;
+    @SerializedName("foreign"       ) public List<ForeignKey>     _ForeignKeys= new ArrayList<ForeignKey>();
+    @SerializedName("indices"       ) public List<Index>          _Indices    = new ArrayList<Index         >();
+    @SerializedName("http"          ) public HttpMapping[]        _Http       = { };
+    @SerializedName("history"       ) public String     []        _History    = { };
+    @SerializedName("dropOldColumns") public String     []        _DropOldColumns = { };
+    
     /*@formatter:on*/
 
     public transient boolean              _HasUniqueIndex;
@@ -63,6 +65,15 @@ public class Object extends Base
             return C;
         return null;
       }
+    @Override
+    public String[] getColumnNames()
+      {
+        String[] Cols = new String[_Columns.size()];
+        for (int i = 0; i < _Columns.size(); ++i)
+         Cols[i] = _Columns.get(i).getName();
+        return Cols;
+      }
+    
     @Override
     public ObjectLifecycle getLifecycle()
       {
@@ -120,8 +131,13 @@ public class Object extends Base
             for (int i = 0; i < _Columns.size(); ++i)
               {
                 Column C = _Columns.get(i);
+                // It's possible in JSON to have dangling commas, which GSON will read fine as a NULL object. So we need to protect against that.
                 if (C == null)
-                  continue;
+                 {
+                   _Columns.remove(i);
+                   --i;
+                   continue;
+                 }
                 if (i >= 64)
                   PS.AddError("Object '" + getFullName() + "' has declared more than 64 columns!");
                 else
@@ -147,6 +163,13 @@ public class Object extends Base
                       }
                   }
               }
+          }
+
+        for (int i = 0; i < _DropOldColumns.length; ++i)
+          {
+            String n = _DropOldColumns[i];
+            if (getColumn(n) != null)
+             PS.AddError("Object '" + getFullName() + "' is defining a drop column '" + n + "' which is also already defined as a real column. DropOldColumns is used to automate cleaning of old columns that should no longer be part of a table definition.");
           }
 
         _HasUniqueIndex = false;
@@ -321,12 +344,16 @@ public class Object extends Base
     public boolean isAutoGenForeignKey(String Name)
       {
         for (ForeignKey FK : _ForeignKeys)
-         for (Column C : FK._SrcColumnObjs)
-           if (C.getName().equals(Name) == true)
+         {
+          if (FK == null)
+           continue;
+          for (Column C : FK._SrcColumnObjs)
+           if (C != null && C.getName().equals(Name) == true)
             {
               if (FK._DestObjectObj._PrimaryKey._Autogen == true)
-               return true;
+                return true;
             }
+         }
         return false;
       }
   }

@@ -1,5 +1,5 @@
 
-package tilda.data._tilda;
+package tilda.data._Tilda;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -17,7 +17,7 @@ import tilda.utils.*;
 
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
+@SuppressWarnings({ "unused" })
 public class TILDA__TRANSPERF_Json
  {
    static final Logger             LOG                = LogManager.getLogger(TILDA__TRANSPERF_Json.class.getName());
@@ -25,16 +25,16 @@ public class TILDA__TRANSPERF_Json
    protected TILDA__TRANSPERF_Json() { }
 
    /*@formatter:off*/
-   @SerializedName("schemaName"   ) public String         _schemaName   ;
-   @SerializedName("objectName"   ) public String         _objectName   ;
+   @SerializedName("schemaName"   ) public String  _schemaName   ;
+   @SerializedName("objectName"   ) public String  _objectName   ;
    @SerializedName("startPeriod"  ) public String  Str_startPeriod  ;
    transient                        public ZonedDateTime  _startPeriod  ;
    @SerializedName("endPeriod"    ) public String  Str_endPeriod    ;
    transient                        public ZonedDateTime  _endPeriod    ;
-   @SerializedName("commitNano"   ) public Long           _commitNano   ;
-   @SerializedName("commitCount"  ) public Long           _commitCount  ;
-   @SerializedName("rollbackNano" ) public Long           _rollbackNano ;
-   @SerializedName("rollbackCount") public Long           _rollbackCount;
+   @SerializedName("commitNano"   ) public Long  _commitNano   ;
+   @SerializedName("commitCount"  ) public Long  _commitCount  ;
+   @SerializedName("rollbackNano" ) public Long  _rollbackNano ;
+   @SerializedName("rollbackCount") public Long  _rollbackCount;
    /*@formatter:on*/
 
    public tilda.data.TransPerf_Data Write(Connection C) throws Exception
@@ -63,8 +63,7 @@ public class TILDA__TRANSPERF_Json
        throw new Exception("Incoming value for 'tilda.data.TILDA.TRANSPERF.rollbackCount' was null or empty. It's not nullable in the model.\n"+toString());
 
       tilda.data.TransPerf_Data Obj = tilda.data.TransPerf_Factory.Create(_schemaName, _objectName, _startPeriod, _endPeriod, _commitNano, _commitCount, _rollbackNano, _rollbackCount);
-
-
+      Update(Obj);
       if (Obj.Write(C) == false)
        {
          Obj = tilda.data.TransPerf_Factory.LookupByPrimaryKey(_schemaName, _objectName, _startPeriod);
@@ -81,6 +80,18 @@ public class TILDA__TRANSPERF_Json
        }
       return Obj;
    }
+
+   public void Update(tilda.data.TransPerf_Data Obj) throws Exception
+    {
+      if (_schemaName   != null) Obj.setSchemaName   (_schemaName   );
+      if (_objectName   != null) Obj.setObjectName   (_objectName   );
+      if (_startPeriod  != null) Obj.setStartPeriod  (_startPeriod  );
+      if (_endPeriod    != null) Obj.setEndPeriod    (_endPeriod    );
+      if (_commitNano   != null) Obj.setCommitNano   (_commitNano   );
+      if (_commitCount  != null) Obj.setCommitCount  (_commitCount  );
+      if (_rollbackNano != null) Obj.setRollbackNano (_rollbackNano );
+      if (_rollbackCount!= null) Obj.setRollbackCount(_rollbackCount);
+    }
 
    public String toString()
     {

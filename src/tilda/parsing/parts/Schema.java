@@ -36,21 +36,24 @@ public class Schema
     protected static final Logger  LOG                = LogManager.getLogger(Schema.class.getName());
 
     /*@formatter:off*/
-    @SerializedName("package"     ) public String            _Package;
-    @SerializedName("dependencies") public String[]          _Dependencies;
-    @SerializedName("interfaces"  ) public List<Interface  > _Interfaces  = new ArrayList<Interface  >();
-    @SerializedName("enumerations") public List<Enumeration> _Enumerations= new ArrayList<Enumeration>();
-    @SerializedName("mappers"     ) public List<Mapper     > _Mappers     = new ArrayList<Mapper     >();
-    @SerializedName("objects"     ) public List<Object     > _Objects     = new ArrayList<Object     >();
-    @SerializedName("views"       ) public List<View       > _Views       = new ArrayList<View       >();
-    @SerializedName("importers"   ) public List<Importer   > _Importers   = new ArrayList<Importer   >();
+    @SerializedName("package"      ) public String            _Package;
+    @SerializedName("documentation") public Documentation     _Documentation = new Documentation();
+    @SerializedName("dependencies" ) public String[]          _Dependencies;
+    @SerializedName("interfaces"   ) public List<Interface  > _Interfaces  = new ArrayList<Interface  >();
+    @SerializedName("enumerations" ) public List<Enumeration> _Enumerations= new ArrayList<Enumeration>();
+    @SerializedName("mappers"      ) public List<Mapper     > _Mappers     = new ArrayList<Mapper     >();
+    @SerializedName("objects"      ) public List<Object     > _Objects     = new ArrayList<Object     >();
+    @SerializedName("views"        ) public List<View       > _Views       = new ArrayList<View       >();
+    @SerializedName("importers"    ) public List<Importer   > _Importers   = new ArrayList<Importer   >();
     /*@formatter:on*/
 
     transient public String        _Name;
     transient public String        _ResourceName;
+    transient public String        _ResourceNameShort;
+    transient public String        _ProjectRoot;
     transient public List<Schema>  _DependencySchemas = new ArrayList<Schema>();
 
-    protected static final Pattern P                  = Pattern.compile(".*_tilda\\.(\\w+)\\.json");
+    protected static final Pattern P                  = Pattern.compile("_tilda\\.(\\w+)\\.json");
 
     public void setOrigin(String ResourceName)
       throws Exception
@@ -62,7 +65,10 @@ public class Schema
         if (i == -1)
           throw new Exception("The Schema being loaded from resource '" + ResourceName + "' does not match its package declaration '" + _Package + "'.");
 
-        Matcher M = P.matcher(ResourceName);
+        _ProjectRoot = ResourceName.substring(0,  i);
+        _ResourceNameShort = ResourceName.substring(i);
+        String res = ResourceName.substring(i+Pack.length()+1);
+        Matcher M = P.matcher(res);
         while (M.matches() == true)
           {
             _Name = M.group(1).toUpperCase();
@@ -71,11 +77,19 @@ public class Schema
         throw new Exception("Cannot parse out the Tilda schema name out of the resource/file name '" + ResourceName + "'.");
       }
 
+    /**
+     * 
+     * @return the FULL name of the schema (including the package name).
+     */
     public String getFullName()
       {
         return _Package + "." + _Name;
       }
 
+    /**
+     * 
+     * @return simply the name of the schema.
+     */
     public String getShortName()
       {
         return _Name;
@@ -153,5 +167,11 @@ public class Schema
         
         return Errs == PS.getErrorCount();
       }
+    public Documentation getDocumentation(){
+    	if(_Documentation == null){
+    		_Documentation = new Documentation();
+    	}
+    	return _Documentation;
+    }
 
   }

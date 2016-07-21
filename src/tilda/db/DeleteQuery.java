@@ -32,15 +32,15 @@ import tilda.enums.StatementType;
  */
 public class DeleteQuery extends QueryHelper
   {
-    public DeleteQuery(Connection C, String TableName)
+    public DeleteQuery(Connection C, String SchemaName, String TableName)
       throws Exception
       {
-        super(C, StatementType.DELETE, TableName);
+        super(C, StatementType.DELETE, SchemaName, TableName, true);
       }
 
     public int execute()
       throws Exception
       {
-        return _C.ExecuteUpdate(_TableName, _QueryStr.toString());
+        return _C.ExecuteUpdate(_SchemaName, _TableName, _QueryStr.toString());
       }
   }

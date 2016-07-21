@@ -19,13 +19,14 @@ package tilda.db;
 import java.sql.Array;
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Statement;
 import java.util.ArrayDeque;
+import java.util.Collection;
 import java.util.Deque;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,13 +38,17 @@ import tilda.enums.AggregateType;
 import tilda.enums.ColumnType;
 import tilda.enums.TransactionType;
 import tilda.generation.interfaces.CodeGenSql;
+import tilda.migration.ColInfo;
 import tilda.parsing.parts.Column;
 import tilda.parsing.parts.Object;
 import tilda.parsing.parts.Schema;
 import tilda.parsing.parts.View;
 import tilda.performance.PerfTracker;
+import tilda.types.ColumnDefinition;
 import tilda.utils.AnsiUtil;
+import tilda.utils.CollectionUtil;
 import tilda.utils.SystemValues;
+import tilda.utils.pairs.StringStringPair;
 
 
 public final class Connection
@@ -82,6 +87,11 @@ public final class Connection
       {
         return _Url;
       }
+    
+    public final String getDBTypeName()
+    {
+      return _DB.getName();
+    }
 
     /**
      * Wrapper to {@link java.sql.Connection#commit()} with extra logging and performance tracking
@@ -262,30 +272,31 @@ public final class Connection
       }
 
 
-    public int ExecuteSelect(String TableName, String Query, RecordProcessor RP)
+    public int ExecuteSelect(String SchemaName, String TableName, String Query, RecordProcessor RP)
     throws Exception
       {
-        return JDBCHelper.ExecuteSelect(_C, TableName, Query, RP);
+        return JDBCHelper.ExecuteSelect(_C, SchemaName, TableName, Query, RP);
       }
 
     /**
      * Executes a query with a record processor, starting at Start (0 is beginning), and for Size records.
      */
-    public int ExecuteSelect(String TableName, String Query, RecordProcessor RP, int Start, boolean Offsetted, int Size, boolean Limited)
+    public int ExecuteSelect(String SchemaName, String TableName, String Query, RecordProcessor RP, int Start, boolean Offsetted, int Size, boolean Limited)
     throws Exception
       {
-        return ExecuteSelect(TableName, Query, RP, Start, Offsetted, Size, Limited, false);
+        return ExecuteSelect(SchemaName, TableName, Query, RP, Start, Offsetted, Size, Limited, false);
       }
     /**
      * Executes a query with a record processor, starting at Start (0 is beginning), and for Size records.
      */
-    public int ExecuteSelect(String TableName, String Query, RecordProcessor RP, int Start, boolean Offsetted, int Size, boolean Limited, boolean CountAll)
+    public int ExecuteSelect(String SchemaName, String TableName, String Query, RecordProcessor RP, int Start, boolean Offsetted, int Size, boolean Limited, boolean CountAll)
     throws Exception
       {
-        return JDBCHelper.ExecuteSelect(_C, TableName, Query, RP, Start, Offsetted, Size, Limited, CountAll);
+        return JDBCHelper.ExecuteSelect(_C, SchemaName, TableName, Query, RP, Start, Offsetted, Size, Limited, CountAll);
       }
 
-    public int ExecuteUpdate(String TableName, String Query)
+    
+    public int ExecuteUpdate(String SchemaName, String TableName, String Query)
     throws Exception
       {
         // if (_DB.FullIdentifierOnUpdate() == true)
@@ -293,7 +304,13 @@ public final class Connection
         // LOG.debug("TILDA("+AnsiUtil.NEGATIVE + TableName + AnsiUtil.NEGATIVE_OFF+") Original query: " + Query);
         // Query = TextUtil.SearchReplace(Query, TableName+".", "");
         // }
-        return JDBCHelper.ExecuteUpdate(_C, TableName, Query);
+        return JDBCHelper.ExecuteUpdate(_C, SchemaName, TableName, Query);
+      }
+    
+    public void ExecuteDDL(String SchemaName, String TableName, String Query)
+    throws Exception
+      {
+        JDBCHelper.ExecuteDDL(_C, SchemaName, TableName, Query);
       }
 
     public Array createArrayOf(String TypeName, java.lang.Object[] A)
@@ -301,24 +318,14 @@ public final class Connection
       {
         return _C.createArrayOf(TypeName, A);
       }
-
-    public Array createArrayOf(String TypeName, Set<?> A)
-    throws SQLException
-      {
-        return _C.createArrayOf(TypeName, A.toArray());
-      }
-
-    public Array createArrayOf(String TypeName, List<?> A)
-    throws SQLException
-      {
-        return _C.createArrayOf(TypeName, A.toArray());
-      }
-
+    
     Deque<Savepoint> _SavePoints = new ArrayDeque<Savepoint>();
 
     public void setSavepoint()
     throws SQLException
       {
+        if (_DB.needsSavepoint() == false)
+         return;
         long T0 = System.nanoTime();
         _SavePoints.add(_C.setSavepoint());
         PerfTracker.add(TransactionType.SAVEPOINT_SET, System.nanoTime() - T0);
@@ -358,6 +365,12 @@ public final class Connection
     throws Exception
       {
         return _DB.alterTableAddColumn(this, Col, DefaultValue);
+      }
+
+    public boolean alterTableDropColumn(Object Obj, ColInfo CI)
+    throws Exception
+      {
+        return _DB.alterTableDropColumn(this, Obj, CI);
       }
 
     public boolean alterTableAlterColumnNull(Column Col, String DefaultValue)
@@ -417,7 +430,72 @@ public final class Connection
       {
         return _DB.alterTableAlterColumnType(this, FromType, Col, defaultZI);
       }
+
+    public boolean addHelperFunctions() throws Exception
+      {
+        return _DB.addHelperFunctions(this);
+      }
+
+    public StringStringPair getTypeMapping(int Type, String Name, int Size, String TypeName)
+    throws Exception
+      {
+        return _DB.getTypeMapping(Type, Name, Size, TypeName);
+      }
+
+    public boolean supportsArrays()
+      {
+        return _DB.supportsArrays();
+      }
+
+    public java.lang.Object getEqualCurrentTimestamp()
+      {
+        return "="+_DB.getCurrentTimestampStr();
+      }
+
+    public java.lang.Object getCommaCurrentTimestamp()
+      {
+        return ", "+_DB.getCurrentTimestampStr();
+      }
+
+    public void getFullColumnVar(StringBuilder Str, String SchemaName, String TableName, String ColumnName)
+      {
+        _DB.getFullColumnVar(Str, SchemaName, TableName, ColumnName);
+      }
+
+    public void getFullTableVar(StringBuilder Str, String SchemaName, String TableName)
+      {
+        _DB.getFullTableVar(Str, SchemaName, TableName);
+      }
+
+    public void setArray(PreparedStatement PS, int i, ColumnType Type, List<java.sql.Array> allocatedArrays, String[] val) throws Exception
+      {
+        _DB.setArray(this, PS, i, Type, allocatedArrays, CollectionUtil.toList(val));
+      }
     
+    public void setArray(PreparedStatement PS, int i, ColumnType Type, List<java.sql.Array> allocatedArrays, Collection<?> val) throws Exception
+      {
+        _DB.setArray(this, PS, i, Type, allocatedArrays, val);
+      }
+
+    public Collection<?> getArray(ResultSet RS, int i, ColumnType Type, boolean isSet) throws Exception
+      {
+        return _DB.getArray(RS, i, Type, isSet);
+      }
+
+    public String getJsonParametrizedQueryPlaceHolder()
+      {
+        return _DB.getJsonParametrizedQueryPlaceHolder();
+      }
+
+    public void setOrderByWithNullsOrdering(StringBuilder Str, ColumnDefinition Col, boolean Asc, boolean NullsLast)
+      {
+        _DB.setOrderByWithNullsOrdering(this, Str, Col, Asc, NullsLast);
+      }
+
+    public void truncateTable(String SchemaName, String TableName) throws Exception
+      {
+        _DB.truncateTable(this, SchemaName, TableName);
+      }
   }
 
 

@@ -16,7 +16,12 @@
 
 package tilda.db.stores;
 
+import java.sql.Array;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,16 +31,26 @@ import tilda.db.Connection;
 import tilda.enums.AggregateType;
 import tilda.enums.ColumnType;
 import tilda.generation.interfaces.CodeGenSql;
+import tilda.migration.ColInfo;
 import tilda.parsing.parts.Column;
 import tilda.parsing.parts.Object;
 import tilda.parsing.parts.Schema;
 import tilda.parsing.parts.View;
+import tilda.types.ColumnDefinition;
 import tilda.utils.TextUtil;
+import tilda.utils.pairs.StringStringPair;
 
 public class IBMDB2 implements DBType
   {
     
     static final Logger LOG = LogManager.getLogger(IBMDB2.class.getName());
+    
+    @Override
+    public String getName()
+      {
+        return "IBMDB2";
+      }
+    
     
     @Override
     public boolean isErrNoData(String SQLState, int ErrorCode)
@@ -47,12 +62,6 @@ public class IBMDB2 implements DBType
     public String getCurrentTimestampStr()
       {
         return "CURRENT TIMESTAMP";
-      }
-
-    @Override
-    public String getName()
-      {
-        return "DB2";
       }
 
     protected static final String[] _LOCK_CONN_ERROR_SUBSTR = { "deadlocked on lock"
@@ -127,6 +136,14 @@ public class IBMDB2 implements DBType
       {
         throw new UnsupportedOperationException();
       }
+    
+    @Override
+    public boolean alterTableDropColumn(Connection Con, Object Obj, ColInfo CI)
+    throws Exception
+      {
+        throw new UnsupportedOperationException();
+      }
+    
 
     @Override
     public CodeGenSql getSQlCodeGen()
@@ -178,6 +195,97 @@ public class IBMDB2 implements DBType
     @Override
     public boolean alterTableAlterColumnType(Connection Con, ColumnType fromType, Column Col, ZoneInfo_Data defaultZI)
       {
+        throw new UnsupportedOperationException();
+      }
+    
+    @Override
+    public boolean addHelperFunctions(Connection Con) throws Exception
+     {
+       throw new UnsupportedOperationException();
+     }    
+    
+    @Override
+    public StringStringPair getTypeMapping(int type, String name, int size, String typeName)
+    throws Exception
+      {
+        throw new UnsupportedOperationException();
+      }
+
+    @Override
+    public boolean supportsArrays()
+      {
         return false;
       }
+
+    @Override
+    public void getFullColumnVar(StringBuilder Str, String SchemaName, String TableName, String ColumnName)
+      {
+        Str.append("\"").append(SchemaName).append("\".\"").append(TableName).append("\".\"").append(ColumnName).append("\"");
+      }
+
+    @Override
+    public void getFullTableVar(StringBuilder Str, String SchemaName, String TableName)
+      {
+        Str.append("\"").append(SchemaName).append("\".\"").append(TableName).append("\"");
+      }
+
+
+    @Override
+    public void setArray(Connection C, PreparedStatement PS, int i, ColumnType Type, List<Array> allocatedArrays, Collection<?> val)
+    throws Exception
+      {
+        throw new UnsupportedOperationException();
+      }
+
+
+    @Override
+    public Collection<?> getArray(ResultSet RS, int i, ColumnType Type, boolean isSet)
+    throws Exception
+      {
+        throw new UnsupportedOperationException();
+      }
+
+
+    @Override
+    public void setJson(PreparedStatement PS, int i, String jsonValue)
+    throws Exception
+      {
+        // TODO Auto-generated method stub
+        
+      }
+
+
+    @Override
+    public String getJson(ResultSet RS, int i)
+    throws Exception
+      {
+        // TODO Auto-generated method stub
+        return null;
+      }
+
+
+    @Override
+    public String getJsonParametrizedQueryPlaceHolder()
+      {
+        throw new UnsupportedOperationException();
+      }
+
+
+    @Override
+    public void setOrderByWithNullsOrdering(Connection C, StringBuilder Str, ColumnDefinition Col, boolean Asc, boolean NullsLast)
+      {
+        throw new UnsupportedOperationException();
+        
+      }
+
+
+    @Override
+    public void truncateTable(Connection C, String schemaName, String tableName)
+    throws Exception
+      {
+        throw new UnsupportedOperationException();
+        
+      }
+
+
   }

@@ -17,7 +17,9 @@
 package tilda.generation.java8;
 
 import java.io.PrintWriter;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import tilda.enums.ColumnMode;
 import tilda.enums.ColumnType;
@@ -103,17 +105,17 @@ public class Helper
 
     public static String getRuntimeSelectStr(Column C)
       {
-        return C._ParentObject.getBaseClassName() + "_Factory.COLS." + C.getName().toUpperCase() + "._Full";
+        return C._ParentObject.getBaseClassName() + "_Factory.COLS." + C.getName().toUpperCase() + ".getFullColumnVarForSelect(C, S)";
       }
 
     public static String getRuntimeInsertStr(Column C)
       {
-        return C._ParentObject.getBaseClassName() + "_Factory.COLS." + C.getName().toUpperCase() + "._Insert";
+        return C._ParentObject.getBaseClassName() + "_Factory.COLS." + C.getName().toUpperCase() + ".getFullColumnVarForInsert(C, S)";
       }
 
     public static String getRuntimeUpdateStr(Column C)
       {
-        return C._ParentObject.getBaseClassName() + "_Factory.COLS." + C.getName().toUpperCase() + "._Update";
+        return C._ParentObject.getBaseClassName() + "_Factory.COLS." + C.getName().toUpperCase() + ".getFullColumnVarForUpdate(C, S)";
       }
 
     public static String getVisibility(Column C, boolean PackageForPrivate)
@@ -157,7 +159,7 @@ public class Helper
         Out.println("        }");
         Out.println("       finally");
         Out.println("        {");
-        Out.println("          " + getSupportClassFullName(O._ParentSchema) + ".HandleFinally(PS, T0, " + O.getBaseClassName() + "_Factory.TABLENAME, " + StatementTypeStr + ", count, AllocatedArrays);");
+        Out.println("          " + getSupportClassFullName(O._ParentSchema) + ".HandleFinally(PS, T0, " + O.getBaseClassName() + "_Factory.SCHEMA_TABLENAME_LABEL, " + StatementTypeStr + ", count, AllocatedArrays);");
         Out.println("          PS = null;");
         Out.println("          AllocatedArrays = null;");
         Out.println("        }");
@@ -215,7 +217,7 @@ public class Helper
       throws Error
       {
         if (V._Value.equalsIgnoreCase("NOW") == true)
-          return getSupportClassFullName(C._ParentObject.getSchema()) + "._COMMACURRENTTIMESTAMP";
+          return "C.getCommaCurrentTimestamp()";
         else if (V._Value.equalsIgnoreCase("UNDEFINED") == true)
           return getSupportClassFullName(C._ParentObject.getSchema()) + "._COMMAQUESTION";
 
@@ -227,7 +229,7 @@ public class Helper
       throws Error
       {
         if (V._Value.equalsIgnoreCase("NOW") == true)
-          return getSupportClassFullName(C._ParentObject.getSchema()) + "._EQUALCURRENTTIMESTAMP";
+          return "C.getEqualCurrentTimestamp()";
         else if (V._Value.equalsIgnoreCase("UNDEFINED") == true)
           return getSupportClassFullName(C._ParentObject.getSchema()) + "._EQUALQUESTION";
 
@@ -273,12 +275,25 @@ public class Helper
                 if (First == true)
                   First = false;
                 else
-                  Str.append(", ");
-                Str.append(G.getSql().getFullColumnVar(C)).append(" ").append(O.toString());
+                  Str.append("S.append(\", ");
+                Str.append("\"); ");
+                Str.append(Helper.getFullColVarAtRuntime(C));
+                Str.append("; S.append(\" ").append(O.toString()).append("\");");
               }
           }
         return Str.toString();
       }
+    
+    public static String getFullColVarAtRuntime(Column C)
+     {
+       return "C.getFullColumnVar(S, "+TextUtil.EscapeDoubleQuoteWithSlash(C._ParentObject._ParentSchema._Name)+", "+TextUtil.EscapeDoubleQuoteWithSlash(C._ParentObject._Name)+", "+TextUtil.EscapeDoubleQuoteWithSlash(C.getName())+")";
+     }
+    
+    public static String getFullTableVarAtRuntime(Object O)
+     {
+       return "C.getFullTableVar(S, "+TextUtil.EscapeDoubleQuoteWithSlash(O._ParentSchema._Name)+", "+TextUtil.EscapeDoubleQuoteWithSlash(O._Name)+")";
+     }
+    
 
     public static String PrintWhereClause(GeneratorSession G, List<Column> Columns, SubWhereClause SubWhere)
       {
@@ -292,7 +307,9 @@ public class Helper
                   First = false;
                 else
                   Str.append(" AND ");
-                Str.append(G.getSql().getFullColumnVar(C) + "=?");
+                Str.append("\"); ");
+                Str.append(getFullColVarAtRuntime(C));
+                Str.append("; S.append(\"=?");
               }
         if (SubWhere != null)
           {
@@ -302,7 +319,7 @@ public class Helper
                 boolean alone = Str.length() == 0;
                 if (alone == false)
                   Str.append(" AND (");
-                Str.append(q._Clause);
+                Str.append(q._ClauseDynamic);
                 if (alone == false)
                   Str.append(")");
               }
@@ -319,7 +336,7 @@ public class Helper
           {
             Out.println(Lead + "   case -7:");
             Out.println(Lead + "      String clause = ((SelectQuery)ExtraParams).getWhereClause();");
-            Out.println(Lead + "      if (TextUtil.isNullOrEmpty(clause) == false) S.append(\" where \").append(clause);");
+            Out.println(Lead + "      if (TextUtil.isNullOrEmpty(clause) == false) S.append(clause);");
             Out.println(Lead + "      break;");
           }
         int LookupId = -1;
@@ -329,7 +346,7 @@ public class Helper
             if (UniqueConstraints == true)
               {
                 Out.println(Lead + "   case " + LookupId + ":");
-                Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" where (" + PrintWhereClause(G, O._PrimaryKey._ColumnObjs, null) + ")") + ");");
+                Out.println(Lead + "      S.append(\" where (" + PrintWhereClause(G, O._PrimaryKey._ColumnObjs, null) + ")\");");
                 Out.println(Lead + "      break;");
               }
           }
@@ -340,7 +357,7 @@ public class Helper
               if (UniqueConstraints == true)
                 {
                   Out.println(Lead + "   case " + LookupId + ":");
-                  Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" where (" + PrintWhereClause(G, I._ColumnObjs, I._SubQuery) + ")") + ");");
+                  Out.println(Lead + "      S.append(\" where (" + PrintWhereClause(G, I._ColumnObjs, I._SubQuery) + ")\");");
                   Out.println(Lead + "      break;");
                 }
             }
@@ -355,14 +372,14 @@ public class Helper
                     Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(", " + PrintObjectList(I._SubQuery._FromObj)) + "); // Additional From's from the subwhereclause.");
                   String WhereClause = PrintWhereClause(G, I._ColumnObjs, I._SubQuery);
                   if (TextUtil.isNullOrEmpty(WhereClause) == false)
-                    Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" where (" + WhereClause + ")") + ");");
+                    Out.println(Lead + "      S.append(\" where (" + WhereClause + ")\");");
                   // Out.println(Lead + "      if (TextUtil.isNullOrEmpty(PartialWhereclause) == false)");
                   // if (TextUtil.isNullOrEmpty(WhereClause) == false)
                   // Out.println(Lead + "       S.append(\" AND (\").append(PartialWhereclause).append(\")\");");
                   // else
                   // Out.println(Lead + "       S.append(\" where \").append(PartialWhereclause);");
                   if (I._OrderByObjs.isEmpty() == false)
-                    Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" order by " + PrintOrderByClause(G, I._OrderByObjs, I._OrderByOrders)) + ");");
+                    Out.println(Lead + "      S.append(\"" + " order by " + PrintOrderByClause(G, I._OrderByObjs, I._OrderByOrders));
                   Out.println(Lead + "      break;");
                 }
             }
@@ -374,8 +391,8 @@ public class Helper
               if (UniqueConstraints == true)
                 {
                   Out.println(Lead + "   case " + LookupId + ":");
-                  if (SWC._ColumnObjs.isEmpty() == false)
-                    Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" where (" + PrintWhereClause(G, null, SWC) + ")") + ");");
+                  if (SWC._Attributes.isEmpty() == false)
+                    Out.println(Lead + "      S.append(\" where (" + PrintWhereClause(G, null, SWC) + ")\");");
                   Out.println(Lead + "      break;");
                 }
             }
@@ -390,9 +407,9 @@ public class Helper
                     Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(", " + PrintObjectList(SWC._FromObj)) + "); // Additional From's from the subwhereclause.");
                   String WhereClause = PrintWhereClause(G, null, SWC);
                   if (TextUtil.isNullOrEmpty(WhereClause) == false)
-                    Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" where (" + WhereClause + ")") + ");");
+                    Out.println(Lead + "      S.append(\" where (" + WhereClause + ")\");");
                   if (SWC._OrderByObjs.isEmpty() == false)
-                    Out.println(Lead + "      S.append(" + TextUtil.EscapeDoubleQuoteWithSlash(" order by " + PrintOrderByClause(G, SWC._OrderByObjs, SWC._OrderByOrders)) + ");");
+                    Out.println(Lead + "      S.append(\" order by " + PrintOrderByClause(G, SWC._OrderByObjs, SWC._OrderByOrders));
                   Out.println(Lead + "      break;");
                 }
             }
@@ -422,7 +439,7 @@ public class Helper
         return Str.toString();
       }
 
-    public static void SwitchLookupIdPreparedStatement(PrintWriter Out, Object O, String Lead, boolean UniqueConstraints, boolean Static)
+    public static void SwitchLookupIdPreparedStatement(PrintWriter Out, GeneratorSession G, Object O, String Lead, boolean UniqueConstraints, boolean Static)
       {
         String LookupIdStr = (UniqueConstraints == true ? "__" : "") + "LookupId";
         Out.println(Lead + "switch (" + LookupIdStr + ")");
@@ -465,14 +482,15 @@ public class Helper
                   Out.println(Lead + "   case " + LookupId + ": {");
                   for (Column C : I._ColumnObjs)
                     PrintColumnPreparedStatementSetter(Out, O, Lead, C, Static);
-                  if (I._SubQuery != null && I._SubQuery._ColumnObjs.isEmpty() == false)
+                  if (I._SubQuery != null && I._SubQuery._Attributes.isEmpty() == false)
                     {
                       String MethodName = "LookupWhere" + I._Name;
                       Out.println(Lead + "     " + MethodName + "Params P = (" + MethodName + "Params) ExtraParams;");
-                      for (int i = 0; i < I._SubQuery._ColumnObjs.size(); ++i)
+                      Out.println(Lead + "     LOG.debug(\"  \" + P.toString());");
+                      for (Query.Attribute A : I._SubQuery._Attributes)
                         {
-                          Column C = I._SubQuery._ColumnObjs.get(i);
-                          String V = I._SubQuery._VarNames.get(i);
+                          Column C = A._Col;
+                          String V = A._VarName.replace('.', '_');
                           // String Mask = getRuntimeMask(C);
                           String Pad = O._PadderColumnNames.getPad(C.getName());
                           Out.print(Lead + "     ");
@@ -496,8 +514,8 @@ public class Helper
               if (UniqueConstraints == true)
                 {
                   Out.println(Lead + "   case " + LookupId + ":");
-                  for (Column C : SWC._ColumnObjs)
-                    PrintColumnPreparedStatementSetter(Out, O, Lead, C, Static);
+                  for (Query.Attribute A : SWC._Attributes)
+                    PrintColumnPreparedStatementSetter(Out, O, Lead, A._Col, Static);
                   Out.println(Lead + "     break;");
                 }
             }
@@ -509,21 +527,29 @@ public class Helper
                 {
                   Out.println(Lead + "   case " + LookupId + ": {");
                   String MethodName = "LookupWhere" + SWC._Name;
-                  if (SWC._ColumnObjs.isEmpty() == false)
-                    Out.println(Lead + "     " + MethodName + "Params P = (" + MethodName + "Params) ExtraParams;");
-                  for (int i = 0; i < SWC._ColumnObjs.size(); ++i)
+                  if (SWC._Attributes.isEmpty() == false)
+                   {
+                     Out.println(Lead + "     " + MethodName + "Params P = (" + MethodName + "Params) ExtraParams;");
+                     Out.println(Lead + "     LOG.debug(\"  \" + P.toString());");
+                   }
+                  for (Query.Attribute A : SWC._Attributes)
                     {
-                      Column C = SWC._ColumnObjs.get(i);
-                      String V = SWC._VarNames.get(i);
+                      Column C = A._Col;
+                      String V = A._VarName.replace('.', '_');
                       // String Mask = getRuntimeMask(C);
                       String Pad = O._PadderColumnNames.getPad(C.getName());
                       Out.print(Lead + "     ");
-                      if (C._Type.isPrimitive() == false)
+                      if (C._Type.isPrimitive() == false || A._Multi == true)
                         Out.print("if (P._" + V + "==null) PS.setNull(++i, java.sql.Types." + JavaJDBCType.get(C._Type)._JDBCSQLType + "); else ");
                       if (C._Type == ColumnType.DATETIME)
                         Out.println("PS.setTimestamp(++i, new java.sql.Timestamp(P._" + V + ".toInstant().toEpochMilli()), DateTimeUtil._UTC_CALENDAR);");
-                      else
+                      else if (A._Multi == false)
                         Out.println("PS.set" + JavaJDBCType.get(C._Type)._JDBCType + "(++i, " + (C._Type == ColumnType.CHAR ? "\"\"+" : "") + "P._" + V + Pad + ");");
+                      else
+                        Out.println("C.setArray(PS, ++i, "+O._BaseClassName+"_Factory.COLS."+C.getName().toUpperCase()+"._Type, AllocatedArrays, P._" + V + ");");
+                        //Out.println(" { java.sql.Array A = C.createArrayOf(\""+G.getSql().getColumnTypeRaw(C, true)+"\", (P._" + V + Pad + ")); AllocatedArrays.add(A); PS.setArray(++i, A); }");
+                        
+//                        Out.prinstln("PS.set" + JavaJDBCType.get(C._Type)._JDBCType + "(++i, " + (C._Type == ColumnType.CHAR ? "\"\"+" : "") + "P._" + V + Pad + ");");
                     }
                   Out.println(Lead + "     break;");
                   Out.println(Lead + "   }");
@@ -554,37 +580,60 @@ public class Helper
           }
       }
 
-    public static void MakeParamStaticClass(PrintWriter Out, List<Column> ColumnObjs, List<String> VarNames, String MethodName)
+    public static void MakeParamStaticClass(PrintWriter Out, List<Query.Attribute> Attributes, String MethodName)
       {
         boolean First;
         Out.println("    private static class " + MethodName + "Params");
         Out.println("     {");
         Out.print("       protected " + MethodName + "Params(");
         First = true;
-        for (int i = 0; i < ColumnObjs.size(); ++i)
+        Set<String> VarNamesSet = new HashSet<String>();
+        for (Query.Attribute A : Attributes)
           {
-            Column c = ColumnObjs.get(i);
-            String v = VarNames.get(i);
+            String v = A._VarName.replace('.', '_');
+            if (VarNamesSet.add(v) == false)
+              continue;
             if (First == true)
               First = false;
             else
               Out.print(", ");
-            Out.print(JavaJDBCType.getFieldType(c) + " " + v);
+            Out.print(JavaJDBCType.getFieldTypeParam(A._Col, A._Multi) + " " + v);
           }
         Out.println(")");
         Out.println("         {");
-        for (int i = 0; i < ColumnObjs.size(); ++i)
+        VarNamesSet.clear();
+        for (Query.Attribute A : Attributes)
           {
-            String v = VarNames.get(i);
+            String v = A._VarName.replace('.', '_');
+            if (VarNamesSet.add(v) == false)
+              continue;
             Out.println("           _" + v + " = " + v + ";");
           }
         Out.println("         }");
-        for (int i = 0; i < ColumnObjs.size(); ++i)
+        VarNamesSet.clear();
+        for (Query.Attribute A : Attributes)
           {
-            Column c = ColumnObjs.get(i);
-            String v = VarNames.get(i);
-            Out.println("        protected final " + JavaJDBCType.getFieldType(c) + " _" + v + ";");
+            String v = A._VarName.replace('.', '_');
+            if (VarNamesSet.add(v) == false)
+              continue;
+            Out.println("        protected final " + JavaJDBCType.getFieldTypeParam(A._Col, A._Multi) + " _" + v + ";");
           }
+        Out.println("       public String toString()");
+        Out.println("        {");
+        Out.println("          long T0 = System.nanoTime();");
+        Out.println("          String Str = \"\"");
+        VarNamesSet.clear();
+        for (Query.Attribute A : Attributes)
+          {
+            String v = A._VarName.replace('.', '_');
+            if (VarNamesSet.add(v) == false)
+              continue;
+            Out.println("                  + \""+v+": \" + _" + v+" + \";\"");
+          }
+        Out.println("                 ; ");
+        Out.println("          PerfTracker.add(TransactionType.TILDA_TOSTRING, System.nanoTime() - T0);");
+        Out.println("          return Str;");
+        Out.println("        }");
         Out.println("     }");
       }
 
@@ -605,12 +654,35 @@ public class Helper
                 Out.println(")");
               }
           }
-        if (C.isCollection() == false)
+        if (C._Type == ColumnType.JSON)
+          Out.println("        JSONUtil.PrintSubJson(Out, \"" + C.getName() + "\", " + First + ", Obj.get" + TextUtil.CapitalizeFirstCharacter(C.getName()) + "());");
+        else if (C.isCollection() == false)
           Out.println("        JSONUtil.Print(Out, \"" + C.getName() + "\", " + First + ", Obj.get" + TextUtil.CapitalizeFirstCharacter(C.getName()) + "());");
         else
           Out.println("        JSONUtil.Print(Out, \"" + C.getName() + "\", " + First + ", Obj._" + C.getName() + ".toArray(new " + JavaJDBCType.getFieldTypeBaseClass(C) + "[Obj._" + C.getName() + ".size()]));");
         Out.println();
         return false;
+      }
+
+    public static void SelectFrom(PrintWriter Out, Object O)
+      {
+        Out.println("       S.append(\"select \");");
+        boolean First = true;
+        for (Column C : O._Columns)
+          if (C != null && C._Mode != ColumnMode.CALCULATED)
+            {
+              if (First == true)
+                {
+                  Out.print("       S.append(\" \");");
+                  First = false;
+                }
+              else
+                {
+                  Out.print("       S.append(\", \");");
+                }
+              Out.println(" "+getFullColVarAtRuntime(C)+";");
+            }
+        Out.println("       S.append(\" from \"); C.getFullTableVar(S, "+TextUtil.EscapeDoubleQuoteWithSlash(O._ParentSchema._Name)+", "+TextUtil.EscapeDoubleQuoteWithSlash(O._Name)+");");
       }
 
   }
